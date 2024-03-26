@@ -37,10 +37,13 @@ class phoneFilter
         if ($prefix == 0) {
 
             $phone = $this->countries[$this->isoCode] . substr($this->phone, 1);
+
         } else {
 
             $phone = $this->countries[$this->isoCode] . $this->phone;
+            
         }
+
         return $phone;
     }
 }
