@@ -1,10 +1,10 @@
 <?php
 
-namespace Labyrinthe\Payment\Filter;
+namespace Labyrinthe\Payment;
 
 use Labyrinthe\Payment\Filter\phoneFilter;
 
-class Filter {
+trait Filter {
 
     use phoneFilter;
 
