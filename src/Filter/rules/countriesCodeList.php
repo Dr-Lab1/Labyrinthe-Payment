@@ -1,6 +1,6 @@
 <?php
 
-namespace Labyrinthe\Payment\Filter;
+namespace Labyrinthe\Payment\Filter\Rules;
 
 trait countriesCodeList {
 

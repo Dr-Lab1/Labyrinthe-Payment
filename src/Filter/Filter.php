@@ -1,8 +1,8 @@
 <?php
 
-namespace Labyrinthe\Payment;
+namespace Labyrinthe\Payment\Filter;
 
-use Labyrinthe\Payment\Filter\phoneFilter;
+use Labyrinthe\Payment\Filter\Rules\phoneFilter;
 
 trait Filter {
 

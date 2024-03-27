@@ -2,7 +2,7 @@
 
 namespace Labyrinthe\Payment;
 
-use Labyrinthe\Payment\Filter;
+use Labyrinthe\Payment\Filter\Filter;
 
 class paymentServiceProvider {
 
