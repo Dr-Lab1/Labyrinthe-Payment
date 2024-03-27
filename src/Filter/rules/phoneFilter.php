@@ -4,7 +4,7 @@ namespace Labyrinthe\Payment\Filter;
 
 use Labyrinthe\Payment\Filter\countriesCodeList;
 
-class phoneFilter
+trait phoneFilter
 {
     # Traits
     use countriesCodeList;
@@ -36,14 +36,14 @@ class phoneFilter
 
         if ($prefix == 0) {
 
-            $phone = $this->countries[$this->isoCode] . substr($this->phone, 1);
+            $this->phone = $this->countries[$this->isoCode] . substr($this->phone, 1);
 
         } else {
 
-            $phone = $this->countries[$this->isoCode] . $this->phone;
+            $this->phone = $this->countries[$this->isoCode] . $this->phone;
             
         }
 
-        return $phone;
+        return $this->phone;
     }
 }
