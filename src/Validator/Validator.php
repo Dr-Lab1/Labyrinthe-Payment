@@ -18,16 +18,12 @@ class Validator
      * 
      * @param array $rules
      * 
-     * @return array|null
+     * @return array
      */
 
-    public static function make(array $array, array $rules): array|null
+    public static function make(array $array, array $rules): array
     {
         $validator = new ValidatorHandler();
-        $check = $validator->make($array, $rules);
-
-        if ($check) {
-            return $check;
-        }
+        return $validator->make($array, $rules);
     }
 }

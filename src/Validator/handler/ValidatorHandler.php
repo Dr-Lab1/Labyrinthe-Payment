@@ -20,10 +20,10 @@ class ValidatorHandler implements ValidatorHandlerInterface
      * 
      * @param array $rules
      * 
-     * @return array|null
+     * @return array
      */
 
-    public function make(array $array, array $rules): array|null
+    public function make(array $array, array $rules): array
     {
         foreach ($rules as $key => $value) {
             foreach ($rules[$key] as $item) {
@@ -33,7 +33,6 @@ class ValidatorHandler implements ValidatorHandlerInterface
             }
         }
 
-        if ($this->errors)
-            return $this->errors;
+        return $this->errors;
     }
 }
