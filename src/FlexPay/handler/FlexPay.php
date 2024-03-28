@@ -9,9 +9,14 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
     use FlexPayTrait;
 
-    public function mobile(array $request): array
+    public function mobile(array $request): mixed
     {
 
+        /**
+         * Ceci est le format de réponse défini
+         * 
+         * @var array
+         */
         $resuslt = [
             "success" => 0,
             "message" => "Process failed",
@@ -19,10 +24,6 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         ];
 
         $this->setParams($request);
-
-        $this->phone = $this->phoneNumberFilter($this->phone, 'COD');
-
-        $data = $this->encodedData();
 
         $ch = curl_init();
 
@@ -34,7 +35,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
         if (curl_errno($ch)) {
 
-            return $resuslt['message'] = 'Une erreur lors du traitement de votre requête';
+            $resuslt['message'] = 'Une erreur lors du traitement de votre requête';
 
         } else {
             curl_close($ch);
@@ -47,14 +48,6 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             } else {
                 $resuslt["data"] = $jsonRes;
             }
-        }
-
-        $response = json_decode($response);
-        $data = json_decode($data);
-        if (!$response->code) {
-            # Success
-        } else {
-            # Payment failed
         }
 
         # Final return

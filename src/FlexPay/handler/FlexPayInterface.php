@@ -4,6 +4,6 @@ namespace Labyrinthe\Payment\FlexPay\Handler;
 
 interface FlexPayInterface {
 
-    public function mobile (array $array) : array;
+    public function mobile (array $array) : mixed;
 
 }

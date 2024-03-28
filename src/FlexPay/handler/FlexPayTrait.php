@@ -2,8 +2,13 @@
 
 namespace Labyrinthe\Payment\FlexPay\Handler;
 
+use Labyrinthe\Payment\Filter\Filter;
+
 trait FlexPayTrait
 {
+
+    use Filter;
+
     /**
      * It's a param called #merchant
      * Your Flexpay merchant's code
@@ -96,7 +101,7 @@ trait FlexPayTrait
         $this->amount = $array["amount"];
         $this->currency = $array["currency"];
         $this->callbackUrl = $array["callbackUrl"];
-        $this->phone = $array["phone"];
+        $this->phone = $this->phoneNumberFilter($array["phone"], 'COD');
         $this->authorization = $array["authorization"];
         $this->gateway = $array["gateway"];
 
