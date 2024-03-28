@@ -45,8 +45,6 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             return $this->result;
         }
 
-        return [];
-
         $this->setParams($request);
 
         $ch = curl_init();
@@ -58,18 +56,16 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-
-            $this->result['message'] = 'Une erreur lors du traitement de votre requête';
+            $this->setResult(false, [], 'Une erreur lors du traitement de votre requête', []);
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
             $code = $jsonRes->code;
 
             if ($code != "0") {
-                $this->result['message'] = 'Impossible de traiter la demande, veuillez réessayer';
-                $this->result['data'] = $jsonRes;
+                $this->setResult(false, [], 'Impossible de traiter la demande, veuillez réessayer', $jsonRes);
             } else {
-                $this->result["data"] = $jsonRes;
+                $this->setResult(true, [], 'Transaction envoyée avec succès. Veuillez valider le push message', $jsonRes);
             }
         }
 

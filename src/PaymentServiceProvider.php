@@ -31,4 +31,12 @@ class paymentServiceProvider
         "message" => "Process failed",
         "data" => []
     ];
+
+    protected function setResult($success, $errors, $message, $data)
+    {
+        $this->result["success"] = $success;
+        $this->result["errors"] = $errors;
+        $this->result["message"] = $message;
+        $this->result["data"] = $data;
+    }
 }
