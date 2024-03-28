@@ -10,6 +10,17 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
     use FlexPayTrait;
 
+    /**
+     * The static 'mobile' method is the one that facilitates rapid 
+     * integration of the payment module into your application.
+     * It receives an array as a parameter with data such as: 
+     * merchant, type, reference, amount, currency, callbackUrl, phone, authorization, gateway, etc. 
+     * 
+     * @param array $request
+     * 
+     * @return mixed
+     */
+
     public function mobile(array $request): mixed
     {
 
