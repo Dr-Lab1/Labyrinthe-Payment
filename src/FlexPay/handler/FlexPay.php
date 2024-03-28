@@ -13,18 +13,6 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
     public function mobile(array $request): mixed
     {
 
-        /**
-         * Ceci est le format de réponse défini
-         * 
-         * @var array
-         */
-        $resuslt = [
-            "success" => 0,
-            "errors" => [],
-            "message" => "Process failed",
-            "data" => []
-        ];
-
         $validator = Validator::make(
             $request,
             [
@@ -41,9 +29,9 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         );
 
         if ($validator) {
-            $resuslt["errors"] = $validator;
+            $this->result["errors"] = $validator;
 
-            return $resuslt;
+            return $this->result;
         }
 
         return [];
@@ -60,21 +48,21 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
         if (curl_errno($ch)) {
 
-            $resuslt['message'] = 'Une erreur lors du traitement de votre requête';
+            $this->result['message'] = 'Une erreur lors du traitement de votre requête';
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
             $code = $jsonRes->code;
 
             if ($code != "0") {
-                $resuslt['message'] = 'Impossible de traiter la demande, veuillez réessayer';
-                $resuslt['data'] = $jsonRes;
+                $this->result['message'] = 'Impossible de traiter la demande, veuillez réessayer';
+                $this->result['data'] = $jsonRes;
             } else {
-                $resuslt["data"] = $jsonRes;
+                $this->result["data"] = $jsonRes;
             }
         }
 
         # Final return
-        return $resuslt;
+        return $this->result;
     }
 }
