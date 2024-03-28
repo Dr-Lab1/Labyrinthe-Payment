@@ -1,6 +1,6 @@
 <?php
 
-namespace Labyrinthe\Payment\FlexPay;
+namespace Labyrinthe\Payment\FlexPay\Handler;
 
 trait FlexPayTrait
 {
@@ -73,7 +73,7 @@ trait FlexPayTrait
      * 
      * @var array
      */
-    protected array $options;
+    protected array $options = [];
 
     /**
      * It's a param called #authorization
@@ -98,6 +98,7 @@ trait FlexPayTrait
         $this->callbackUrl = $array["callbackUrl"];
         $this->phone = $array["phone"];
         $this->authorization = $array["authorization"];
+        $this->gateway = $array["gateway"];
 
         $this->data = [
             "merchant" => $this->merchant,
@@ -121,10 +122,10 @@ trait FlexPayTrait
 
     protected function setOptions() : void {
         $this->options = [
-            CURLOPT_URL, $this->gateway,
+            CURLOPT_URL => $this->gateway,
             CURLOPT_POST => true,
             CURLOPT_HTTPHEADER => array("Content-Type: application/json", "Authorization: $this->authorization"),
-            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $this->encodedData($this->data),
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_CONNECTTIMEOUT => 300

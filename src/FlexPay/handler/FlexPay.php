@@ -1,14 +1,15 @@
 <?php
 
-namespace Labyrinthe\Payment\FlexPay;
+namespace Labyrinthe\Payment\FlexPay\Handler;
 
 use Labyrinthe\Payment\paymentServiceProvider;
 
-class FlexPay extends paymentServiceProvider
+class FlexPay extends paymentServiceProvider implements FlexPayInterface
 {
 
     use FlexPayTrait;
-    public function mobile(array $request)
+
+    public function mobile(array $request): array
     {
 
         $resuslt = [
@@ -21,12 +22,7 @@ class FlexPay extends paymentServiceProvider
 
         $this->phone = $this->phoneNumberFilter($this->phone, 'COD');
 
-        echo $this->phone;
-
-        return 0;
-
         $data = $this->encodedData();
-        $this->gateway = "https://beta-backend.flexpay.cd/api/rest/v1/paymentService";
 
         $ch = curl_init();
 
@@ -37,14 +33,17 @@ class FlexPay extends paymentServiceProvider
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
+
             return $resuslt['message'] = 'Une erreur lors du traitement de votre requête';
+
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
             $code = $jsonRes->code;
-            
+
             if ($code != "0") {
                 $resuslt['message'] = 'Impossible de traiter la demande, veuillez réessayer';
+                $resuslt['data'] = $jsonRes;
             } else {
                 $resuslt["data"] = $jsonRes;
             }
