@@ -3,6 +3,7 @@
 namespace Labyrinthe\Payment\FlexPay\Handler;
 
 use Labyrinthe\Payment\paymentServiceProvider;
+use Labyrinthe\Payment\Validator\Validator;
 
 class FlexPay extends paymentServiceProvider implements FlexPayInterface
 {
@@ -19,9 +20,33 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
          */
         $resuslt = [
             "success" => 0,
+            "errors" => [],
             "message" => "Process failed",
             "data" => []
         ];
+
+        $validator = Validator::make(
+            $request,
+            [
+                "merchant" => ['required'],
+                "type" => ["required", "number"],
+                "reference" => ['required'],
+                "amount" => ['required', "number"],
+                "currency" => ["required"],
+                "callbackUrl" => ["required"],
+                "phone" => ["required"],
+                "authorization" => ["required"],
+                "gateway" => ["required"]
+            ]
+        );
+
+        if ($validator) {
+            $resuslt["errors"] = $validator;
+
+            return $resuslt;
+        }
+
+        return [];
 
         $this->setParams($request);
 
@@ -36,7 +61,6 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         if (curl_errno($ch)) {
 
             $resuslt['message'] = 'Une erreur lors du traitement de votre requête';
-
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
