@@ -2,34 +2,20 @@
 
 namespace Labyrinthe\Payment\Validator;
 
-use Labyrinthe\Payment\Validator\Rules\rules;
-
+// use Labyrinthe\Payment\Validator\Handler\ValidatorHandler;
+use Labyrinthe\Payment\Validator\Handler\ValidatorHandler;
 class Validator
 {
 
-    use rules;
+    protected ValidatorHandler $instance;
 
-    protected array $errors = [];
-
-    protected function make(array $array, array $rules)
+    public static function make(array $array, array $rules)
     {
-        foreach ($rules as $key => $value) {
-            foreach ($rules[$key] as $item) {
-                if ($this->$item($array, $key)) {
-                    $this->errors[] = $this->$item($array, $key);
-                }
-            }
-        }
+        $validator = new ValidatorHandler();
+        $check = $validator->make($array, $rules);
 
-        if ($this->errors) {
-            return false;
-        } else {
-            return true;
+        if ($check) {
+            return $check;
         }
-    }
-
-    protected function errors()
-    {
-        return $this->errors;
     }
 }

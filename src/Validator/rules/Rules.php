@@ -15,7 +15,7 @@ trait rules
      * @return string|null
      * 
      */
-    protected function required(array $array, string $key): string
+    protected function required(array $array, string $key): string|null
     {
         $valid = isset($array[$key]) ? true : false;
 
@@ -37,7 +37,7 @@ trait rules
      * @return string|null
      */
 
-    protected function number(array $array, string $key): string
+    protected function number(array $array, string $key): string|null
     {
         $type = isset($array[$key]) ? gettype($array[$key]) : null;
 
