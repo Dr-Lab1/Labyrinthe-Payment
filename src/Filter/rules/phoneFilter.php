@@ -9,6 +9,16 @@ trait phoneFilter
     # Traits
     use countriesCodeList;
 
+    /**
+     * This function is used to check and filter whether the user's specific telephone number data conforms to the rules.
+     * It returns a string 
+     * 
+     * @param string $phone
+     * @param string $isoCode
+     * 
+     * @return string
+     */
+
     public function phoneNumberFilter(string $phone, string $isoCode): string
     {
 

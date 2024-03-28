@@ -5,7 +5,7 @@ namespace Labyrinthe\Payment\Filter\Rules;
 trait countriesCodeList {
 
     /**
-     * The list of countries using our sys
+     * The list of countries using our system
      * 
      * [isoCode => countryCode] 
      * 
