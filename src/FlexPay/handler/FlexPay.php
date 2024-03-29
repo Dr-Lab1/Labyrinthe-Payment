@@ -72,4 +72,54 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         # Final return
         return $this->result;
     }
+
+    /**
+     * The 'results' method is the one that facilitates rapid 
+     * checking of the payment results sent by flexpay to your 
+     * application route sent by your callbackUrl param.
+     * 
+     * It receives an array as a parameter with data such as: 
+     * code, reference", provider_reference, orderNumber, amount,
+     * amountCustomer, phone, currency, createdAt, channel
+     * 
+     * @param array $request
+     * 
+     * @return mixed
+     */
+
+    public function check_phone_results(array $request): mixed
+    {
+        $validator = Validator::make(
+            $request,
+            [
+                "code" => ["required"],
+                "reference" => ["required"],
+                "provider_reference" => ["required"],
+                "orderNumber" => ["required"],
+                "amount" => ["required"],
+                "amountCustomer" => ["required"],
+                "phone" => ["required"],
+                "currency" => ["required"],
+                "createdAt" => ["required"],
+                "channel" => ["required"],
+            ]
+        );
+
+        if ($validator) {
+            $this->result["errors"] = $validator;
+
+            return $this->result;
+        }
+
+
+        if (!$request["code"]) {
+            #Le paiement a reussi 
+            $this->setResult(true, [], "Le paiement a reussi", $request);
+        } else {
+            #Le paiement a reussi 
+            $this->setResult(false, [], "Le paiement a échoué", []);
+        }
+
+        return $this->result;
+    }
 }
