@@ -95,15 +95,15 @@ trait FlexPayTrait
      */
     protected function setParams(array $array): void
     {
-        $this->merchant = $array["merchant"];
-        $this->type = $array["type"];
-        $this->reference = $array["reference"];
-        $this->amount = $array["amount"];
-        $this->currency = $array["currency"];
-        $this->callbackUrl = $array["callbackUrl"];
-        $this->phone = $this->phoneNumberFilter($array["phone"], 'COD');
-        $this->authorization = $array["authorization"];
-        $this->gateway = $array["gateway"];
+        $this->merchant = isset($array["merchant"]) ? $array["merchant"] : null;
+        $this->type = isset($array["type"]) ? $array["type"] : null;
+        $this->reference = isset($array["reference"]) ? $array["reference"] : null;
+        $this->amount = isset($array["amount"]) ? $array["amount"] : null;
+        $this->currency = isset($array["currency"]) ? $array["currency"] : null;
+        $this->callbackUrl = isset($array["callbackUrl"]) ? $array["callbackUrl"] : null;
+        $this->phone = isset($array["phone"]) ? $this->phoneNumberFilter($array["phone"], 'COD') : null;
+        $this->authorization = isset($array["authorization"]) ? $array["authorization"] : null;
+        $this->gateway = isset($array["gateway"]) ? $array["gateway"] : null;
 
         $this->data = [
             "merchant" => $this->merchant,
