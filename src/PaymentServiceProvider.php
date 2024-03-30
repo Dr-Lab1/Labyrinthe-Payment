@@ -27,16 +27,16 @@ class paymentServiceProvider
      */
     protected array $result = [
         "success" => 0,
-        "errors" => [],
         "message" => "Process failed",
-        "data" => []
+        "data" => [],
+        "errors" => []
     ];
 
-    protected function setResult($success, $errors, $message, $data)
+    protected function setResult($success, $message, $data = [], $errors = []): void
     {
         $this->result["success"] = $success;
-        $this->result["errors"] = $errors;
         $this->result["message"] = $message;
         $this->result["data"] = $data;
+        $this->result["errors"] = $errors;
     }
 }
