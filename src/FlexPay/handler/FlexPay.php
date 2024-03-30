@@ -166,6 +166,17 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         return $this->result;
     }
 
+    /**
+     * The 'checkTransaction' method is the one that facilitates rapid 
+     * checking of the payment state
+     * 
+     * It receives an array as a parameter with data such as: 
+     * orderNumber, authorization, gateway
+     * 
+     * @param array $array
+     * 
+     * @return mixed
+     */
     public function checkTransaction(array $request): mixed
     {
         $validator = Validator::make(
