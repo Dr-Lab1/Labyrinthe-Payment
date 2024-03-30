@@ -24,7 +24,7 @@ class FlexpayServiceProvider
     }
 
     /**
-     * The 'phone_results' method is the one that facilitates rapid 
+     * The 'phoneResults' method is the one that facilitates rapid 
      * checking of the payment results sent by flexpay to your 
      * application route sent by your callbackUrl param.
      * 
@@ -32,37 +32,48 @@ class FlexpayServiceProvider
      * code, reference", provider_reference, orderNumber, amount,
      * amountCustomer, phone, currency, createdAt, channel
      * 
-     * @param array $request
+     * @param array $array
      * 
      * @return mixed
      */
-    public static function phone_results(array $array)
+    public static function phoneResults(array $array)
     {
         $mobile = new FlexPay();
-        return $mobile->phone_results($array);
+        return $mobile->phoneResults($array);
     }
 
     /**
-     * The 'card_results' method is the one that facilitates rapid 
+     * The 'cardResults' method is the one that facilitates rapid 
      * checking of the payment results sent by flexpay to your 
      * application route sent by your callbackUrl param.
      * 
      * It receives an array as a parameter with data such as: 
      * code, reference", provider_reference, orderNumber
      * 
-     * @param array $request
+     * @param array $array
      * 
      * @return mixed
      */
-    public static function card_results(array $array)
+    public static function cardResults(array $array)
     {
         $mobile = new FlexPay();
-        return $mobile->card_results($array);
+        return $mobile->cardResults($array);
     }
 
-    public static function check_mobile_transaction(array $array)
+    /**
+     * The 'checkTransaction' method is the one that facilitates rapid 
+     * checking of the payment state
+     * 
+     * It receives an array as a parameter with data such as: 
+     * orderNumber, authorization, gateway
+     * 
+     * @param array $array
+     * 
+     * @return mixed
+     */
+    public static function checkTransaction(array $array)
     {
         $mobile = new FlexPay();
-        return $mobile->check_mobile_transaction($array);
+        return $mobile->checkTransaction($array);
     }
 }

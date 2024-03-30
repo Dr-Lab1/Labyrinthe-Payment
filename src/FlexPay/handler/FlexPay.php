@@ -74,7 +74,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
     }
 
     /**
-     * The 'phone_results' method is the one that facilitates rapid 
+     * The 'phoneResults' method is the one that facilitates rapid 
      * checking of the payment results sent by flexpay to your 
      * application route sent by your callbackUrl param.
      * 
@@ -87,7 +87,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-    public function phone_results(array $request): mixed
+    public function phoneResults(array $request): mixed
     {
         $validator = Validator::make(
             $request,
@@ -124,7 +124,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
     }
 
     /**
-     * The 'card_results' method is the one that facilitates rapid 
+     * The 'cardResults' method is the one that facilitates rapid 
      * checking of the payment results sent by flexpay to your 
      * application route sent by your callbackUrl param.
      * 
@@ -136,7 +136,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-    public function card_results(array $request): mixed
+    public function cardResults(array $request): mixed
     {
         $validator = Validator::make(
             $request,
@@ -166,7 +166,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         return $this->result;
     }
 
-    public function check_mobile_transaction(array $request): mixed
+    public function checkTransaction(array $request): mixed
     {
         $validator = Validator::make(
             $request,
@@ -202,26 +202,10 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
             switch ($code) {
                 case '0':
-                    $this->setResult(true, 'Transaction traitée avec succès', $jsonRes);
+                    $this->setResult(true, $jsonRes->message, $jsonRes);
                     break;
                 case '1':
-                    $this->setResult(true, 'Aucune transaction trouvée', $jsonRes);
-                    break;
-                case '2':
-                    $this->setResult(true, 'Paiement en attente', $jsonRes);
-                    break;
-                case '3':
-                    $this->setResult(true, 'Paiement à rembourser au client', $jsonRes);
-                    break;
-                case '4':
-                    $this->setResult(true, 'Paiement déjà remboursé au client', $jsonRes);
-                    break;
-                case '5':
-                    $this->setResult(true, 'Transaction annulée par le marchand', $jsonRes);
-                    break;
-
-                default:
-                    $this->setResult(false, 'Une erreur est survenue lors du traitement', $jsonRes);
+                    $this->setResult(false, $jsonRes->message, $jsonRes);
                     break;
             }
         }

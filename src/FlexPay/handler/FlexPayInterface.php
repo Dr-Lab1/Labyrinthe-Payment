@@ -7,11 +7,11 @@ interface FlexPayInterface
 
     public function mobile(array $array): mixed;
 
-    public function phone_results(array $array): mixed;
+    public function phoneResults(array $array): mixed;
 
-    public function card_results(array $array): mixed;
+    public function cardResults(array $array): mixed;
 
-    public function check_mobile_transaction(array $array): mixed;
+    public function checkTransaction(array $array): mixed;
 
 
 }
