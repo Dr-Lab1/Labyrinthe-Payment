@@ -74,7 +74,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
     }
 
     /**
-     * The 'check_phone_results' method is the one that facilitates rapid 
+     * The 'phone_results' method is the one that facilitates rapid 
      * checking of the payment results sent by flexpay to your 
      * application route sent by your callbackUrl param.
      * 
@@ -87,7 +87,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-    public function check_phone_results(array $request): mixed
+    public function phone_results(array $request): mixed
     {
         $validator = Validator::make(
             $request,
@@ -124,7 +124,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
     }
 
     /**
-     * The 'check_card_results' method is the one that facilitates rapid 
+     * The 'card_results' method is the one that facilitates rapid 
      * checking of the payment results sent by flexpay to your 
      * application route sent by your callbackUrl param.
      * 
@@ -136,7 +136,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-     public function check_card_results(array $request): mixed
+     public function card_results(array $request): mixed
      {
          $validator = Validator::make(
              $request,
