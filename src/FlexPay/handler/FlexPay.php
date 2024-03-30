@@ -49,23 +49,23 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
         $ch = curl_init();
 
-        $this->setOptions();
+        $this->setOptions("POST");
 
         curl_setopt_array($ch, $this->options);
 
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            $this->setResult(false, [], 'Une erreur lors du traitement de votre requête', []);
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête');
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
             $code = $jsonRes->code;
 
             if ($code != "0") {
-                $this->setResult(false, [], 'Impossible de traiter la demande, veuillez réessayer', $jsonRes);
+                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $jsonRes);
             } else {
-                $this->setResult(true, [], 'Transaction envoyée avec succès. Veuillez valider le push message', $jsonRes);
+                $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $jsonRes);
             }
         }
 
@@ -114,10 +114,10 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
         if (!$request["code"]) {
             #Le paiement a reussi 
-            $this->setResult(true, [], "Le paiement a reussi", $request);
+            $this->setResult(true, "Le paiement a reussi",  $request);
         } else {
-            #Le paiement a reussi 
-            $this->setResult(false, [], "Le paiement a échoué", []);
+            #Le paiement a échoué 
+            $this->setResult(false, "Le paiement a échoué");
         }
 
         return $this->result;
@@ -136,33 +136,97 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-     public function card_results(array $request): mixed
-     {
-         $validator = Validator::make(
-             $request,
-             [
-                 "code" => ["required"],
-                 "reference" => ["required"],
-                 "provider_reference" => ["required"],
-                 "orderNumber" => ["required"],
-             ]
-         );
- 
-         if ($validator) {
-             $this->result["errors"] = $validator;
- 
-             return $this->result;
-         }
- 
- 
-         if (!$request["code"]) {
-             #Le paiement a reussi 
-             $this->setResult(true, [], "Le paiement a reussi", $request);
-         } else {
-             #Le paiement a reussi 
-             $this->setResult(false, [], "Le paiement a échoué", []);
-         }
- 
-         return $this->result;
-     }
+    public function card_results(array $request): mixed
+    {
+        $validator = Validator::make(
+            $request,
+            [
+                "code" => ["required"],
+                "reference" => ["required"],
+                "provider_reference" => ["required"],
+                "orderNumber" => ["required"],
+            ]
+        );
+
+        if ($validator) {
+            $this->result["errors"] = $validator;
+
+            return $this->result;
+        }
+
+
+        if (!$request["code"]) {
+            #Le paiement a reussi 
+            $this->setResult(true, "Le paiement a reussi",  $request);
+        } else {
+            #Le paiement a échoué 
+            $this->setResult(false, "Le paiement a échoué");
+        }
+
+        return $this->result;
+    }
+
+    public function check_mobile_transaction(array $request): mixed
+    {
+        $validator = Validator::make(
+            $request,
+            [
+                "authorization" => ["required"],
+                "gateway" => ["required"],
+                "orderNumber" => ["required"],
+            ]
+        );
+
+        if ($validator) {
+            $this->result["errors"] = $validator;
+
+            return $this->result;
+        }
+
+        $this->setParams($request);
+
+        $ch = curl_init();
+
+        $this->setOptions("GET");
+
+        curl_setopt_array($ch, $this->options);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête');
+        } else {
+            curl_close($ch);
+            $jsonRes = json_decode($response);
+            $code = $jsonRes->code;
+
+            switch ($code) {
+                case '0':
+                    $this->setResult(true, 'Transaction traitée avec succès', $jsonRes);
+                    break;
+                case '1':
+                    $this->setResult(true, 'Aucune transaction trouvée', $jsonRes);
+                    break;
+                case '2':
+                    $this->setResult(true, 'Paiement en attente', $jsonRes);
+                    break;
+                case '3':
+                    $this->setResult(true, 'Paiement à rembourser au client', $jsonRes);
+                    break;
+                case '4':
+                    $this->setResult(true, 'Paiement déjà remboursé au client', $jsonRes);
+                    break;
+                case '5':
+                    $this->setResult(true, 'Transaction annulée par le marchand', $jsonRes);
+                    break;
+
+                default:
+                    $this->setResult(false, 'Une erreur est survenue lors du traitement', $jsonRes);
+                    break;
+            }
+        }
+
+        # Final return
+        return $this->result;
+    }
 }

@@ -36,7 +36,7 @@ class FlexpayServiceProvider
      * 
      * @return mixed
      */
-    public static function check_phone_results(array $array)
+    public static function phone_results(array $array)
     {
         $mobile = new FlexPay();
         return $mobile->phone_results($array);
@@ -54,9 +54,15 @@ class FlexpayServiceProvider
      * 
      * @return mixed
      */
-    public static function check_card_results(array $array)
+    public static function card_results(array $array)
     {
         $mobile = new FlexPay();
-        return $mobile->phone_results($array);
+        return $mobile->card_results($array);
+    }
+
+    public static function check_mobile_transaction(array $array)
+    {
+        $mobile = new FlexPay();
+        return $mobile->check_mobile_transaction($array);
     }
 }

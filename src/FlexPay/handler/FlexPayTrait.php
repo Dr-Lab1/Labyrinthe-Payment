@@ -15,49 +15,49 @@ trait FlexPayTrait
      * 
      * @var string
      */
-    protected string $merchant;
+    protected $merchant;
 
     /**
      * It's a param called #type
      * 
      * @var int
      */
-    protected int $type;
+    protected $type;
 
     /**
      * It's a param called #reference
      * 
      * @var string
      */
-    protected string $reference;
+    protected $reference;
 
     /**
      * It's a param called #amount
      * 
      * @var float
      */
-    protected float $amount;
+    protected $amount;
 
     /**
      * It's a param called #currency
      * 
      * @var string
      */
-    protected string $currency;
+    protected $currency;
 
     /**
      * It's a param called #callbackUrl
      * 
      * @var string
      */
-    protected string $callbackUrl;
+    protected $callbackUrl;
 
     /**
      * It's a param called #phone
      * 
      * @var string
      */
-    protected string $phone;
+    protected $phone;
 
     /**
      * It's a param called #data
@@ -71,7 +71,7 @@ trait FlexPayTrait
      * 
      * @var string
      */
-    protected string $gateway;
+    protected $gateway;
 
     /**
      * It's a param called #options
@@ -85,7 +85,7 @@ trait FlexPayTrait
      * 
      * @var string
      */
-    protected string $authorization;
+    protected $authorization;
 
 
     /**
@@ -103,37 +103,85 @@ trait FlexPayTrait
         $this->callbackUrl = isset($array["callbackUrl"]) ? $array["callbackUrl"] : null;
         $this->phone = isset($array["phone"]) ? $this->phoneNumberFilter($array["phone"], 'COD') : null;
         $this->authorization = isset($array["authorization"]) ? $array["authorization"] : null;
+        $this->orderNumber = isset($array["orderNumber"]) ? $array["orderNumber"] : null;
         $this->gateway = isset($array["gateway"]) ? $array["gateway"] : null;
 
-        $this->data = [
-            "merchant" => $this->merchant,
-            "type" => $this->type,
-            "phone" => $this->phone,
-            "reference" => $this->reference,
-            "amount" => $this->amount,
-            "currency" => $this->currency,
-            "callbackUrl" => $this->callbackUrl,
-            "authorization" => $this->authorization,
-        ];
+        if ($this->merchant) {
+            $this->data["merchant"] = $this->merchant;
+        }
+
+        if ($this->type) {
+            $this->data["type"] = $this->type;
+        }
+
+        if ($this->phone) {
+            $this->data["phone"] = $this->phone;
+        }
+
+        if ($this->reference) {
+            $this->data["reference"] = $this->reference;
+        }
+
+        if ($this->amount) {
+            $this->data["amount"] = $this->amount;
+        }
+
+        if ($this->currency) {
+            $this->data["currency"] = $this->currency;
+        }
+
+        if ($this->callbackUrl) {
+            $this->data["callbackUrl"] = $this->callbackUrl;
+        }
+
+        if ($this->authorization) {
+            $this->data["authorization"] = $this->authorization;
+        }
+
+        if ($this->orderNumber) {
+            $this->data["orderNumber"] = $this->orderNumber;
+        }
     }
 
-    protected function encodedData() {
+    protected function encodedData()
+    {
         return json_encode($this->data);
     }
 
-    protected function decodeData(string $encodedData) {
+    protected function decodeData(string $encodedData)
+    {
         return json_decode($encodedData);
     }
 
-    protected function setOptions() : void {
-        $this->options = [
-            CURLOPT_URL => $this->gateway,
-            CURLOPT_POST => true,
-            CURLOPT_HTTPHEADER => array("Content-Type: application/json", "Authorization: $this->authorization"),
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POSTFIELDS => $this->encodedData($this->data),
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_CONNECTTIMEOUT => 300
-        ];
+    protected function setOptions(string $method): void
+    {
+        switch ($method) {
+            case 'POST':
+                $this->options = [
+                    CURLOPT_URL => $this->gateway,
+                    CURLOPT_POST => true,
+                    CURLOPT_HTTPHEADER => array("Content-Type: application/json", "Authorization: $this->authorization"),
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_POSTFIELDS => $this->encodedData($this->data),
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_CONNECTTIMEOUT => 300
+                ];
+                break;
+
+            case 'GET':
+                $this->gateway = $this->gateway . '?' . http_build_query($this->data);
+                $this->options = [
+                    CURLOPT_URL => $this->gateway,
+                    CURLOPT_HTTPHEADER => array("Content-Type: application/json", "Authorization: $this->authorization"),
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_CONNECTTIMEOUT => 300
+                ];
+                break;
+
+            default:
+                # code...
+                break;
+        }
     }
 }
