@@ -17,10 +17,10 @@ class FlexpayServiceProvider
      * @param array $request
      * @return mixed
      */
-    public static function mobile(array $array)
+    public static function mobile(array $array, array $options = [])
     {
         $mobile = new FlexPay();
-        return $mobile->mobile($array);
+        return $mobile->mobile($array, $options);
     }
 
     /**
@@ -36,10 +36,10 @@ class FlexpayServiceProvider
      * 
      * @return mixed
      */
-    public static function phoneResults(array $array)
+    public static function phoneResults(array $array, array $options = [])
     {
         $mobile = new FlexPay();
-        return $mobile->phoneResults($array);
+        return $mobile->phoneResults($array, $options);
     }
 
     /**
@@ -54,10 +54,10 @@ class FlexpayServiceProvider
      * 
      * @return mixed
      */
-    public static function cardResults(array $array)
+    public static function cardResults(array $array, array $options = [])
     {
         $mobile = new FlexPay();
-        return $mobile->cardResults($array);
+        return $mobile->cardResults($array, $options);
     }
 
     /**
@@ -71,10 +71,10 @@ class FlexpayServiceProvider
      * 
      * @return mixed
      */
-    public static function checkTransaction(array $array)
+    public static function checkTransaction(array $array, array $options = [])
     {
         $mobile = new FlexPay();
-        return $mobile->checkTransaction($array);
+        return $mobile->checkTransaction($array, $options);
     }
 
     // merchantPayOutService
@@ -88,9 +88,9 @@ class FlexpayServiceProvider
      * @param array $request
      * @return mixed
      */
-    public static function merchantPayOutService(array $array)
+    public static function merchantPayOutService(array $array, array $options = [])
     {
         $mobile = new FlexPay();
-        return $mobile->merchantPayOutService($array);
+        return $mobile->merchantPayOutService($array, $options);
     }
 }

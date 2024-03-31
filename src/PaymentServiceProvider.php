@@ -25,18 +25,22 @@ class paymentServiceProvider
      * @var array
      * 
      */
-    protected array $result = [
+    protected $result = [
         "success" => 0,
         "message" => "Process failed",
         "data" => [],
         "errors" => []
     ];
 
-    protected function setResult($success, $message, $data = [], $errors = []): void
+    protected function setResult($success, $message, $json = false, $data = [], $errors = []): void
     {
         $this->result["success"] = $success;
         $this->result["message"] = $message;
         $this->result["data"] = $data;
         $this->result["errors"] = $errors;
+
+        if ($json) {
+            $this->result = json_encode($this->result);
+        }
     }
 }

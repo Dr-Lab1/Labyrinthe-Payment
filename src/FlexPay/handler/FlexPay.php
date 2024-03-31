@@ -21,7 +21,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-    public function mobile(array $request): mixed
+    public function mobile(array $request, array $options = []): mixed
     {
 
         $validator = Validator::make(
@@ -47,6 +47,8 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
         $this->setParams($request);
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         $ch = curl_init();
 
         $this->setOptions("POST");
@@ -56,16 +58,16 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            $this->setResult(false, 'Une erreur lors du traitement de votre requête');
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête', $json, [], curl_error($ch));
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
             $code = $jsonRes->code;
 
             if ($code != "0") {
-                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $jsonRes);
+                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes);
             } else {
-                $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $jsonRes);
+                $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
             }
         }
 
@@ -87,7 +89,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-    public function phoneResults(array $request): mixed
+    public function phoneResults(array $request, array $options = []): mixed
     {
         $validator = Validator::make(
             $request,
@@ -111,13 +113,14 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             return $this->result;
         }
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
 
         if (!$request["code"]) {
             #Le paiement a reussi 
-            $this->setResult(true, "Le paiement a reussi",  $request);
+            $this->setResult(true, "Le paiement a reussi", $json,  $request);
         } else {
             #Le paiement a échoué 
-            $this->setResult(false, "Le paiement a échoué");
+            $this->setResult(false, "Le paiement a échoué", $json);
         }
 
         return $this->result;
@@ -136,7 +139,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-    public function cardResults(array $request): mixed
+    public function cardResults(array $request, array $options = []): mixed
     {
         $validator = Validator::make(
             $request,
@@ -154,13 +157,14 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             return $this->result;
         }
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
 
         if (!$request["code"]) {
             #Le paiement a reussi 
-            $this->setResult(true, "Le paiement a reussi",  $request);
+            $this->setResult(true, "Le paiement a reussi", $json,  $request);
         } else {
             #Le paiement a échoué 
-            $this->setResult(false, "Le paiement a échoué");
+            $this->setResult(false, "Le paiement a échoué", $json);
         }
 
         return $this->result;
@@ -177,7 +181,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * 
      * @return mixed
      */
-    public function checkTransaction(array $request): mixed
+    public function checkTransaction(array $request, array $options = []): mixed
     {
         $validator = Validator::make(
             $request,
@@ -196,6 +200,8 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
         $this->setParams($request);
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         $ch = curl_init();
 
         $this->setOptions("GET");
@@ -205,7 +211,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            $this->setResult(false, 'Une erreur lors du traitement de votre requête');
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête', $json, [], curl_error($ch));
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
@@ -213,10 +219,10 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
             switch ($code) {
                 case '0':
-                    $this->setResult(true, $jsonRes->message, $jsonRes);
+                    $this->setResult(true, $jsonRes->message, $json, $jsonRes);
                     break;
                 case '1':
-                    $this->setResult(false, $jsonRes->message, $jsonRes);
+                    $this->setResult(false, $jsonRes->message, $json, $jsonRes);
                     break;
             }
         }
@@ -236,7 +242,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
      * @return mixed
      */
 
-    public function merchantPayOutService(array $request): mixed
+    public function merchantPayOutService(array $request, array $options = []): mixed
     {
 
         $validator = Validator::make(
@@ -262,6 +268,8 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
 
         $this->setParams($request);
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         $ch = curl_init();
 
         $this->setOptions("POST");
@@ -271,16 +279,16 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            $this->setResult(false, 'Une erreur lors du traitement de votre requête');
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête', $json, [], curl_error($ch));
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
             $code = $jsonRes->code;
 
             if ($code != "0") {
-                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $jsonRes);
+                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes);
             } else {
-                $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $jsonRes);
+                $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
             }
         }
 
