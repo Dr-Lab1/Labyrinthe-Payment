@@ -63,19 +63,21 @@
         <td>USD</td>
         <td>YES</td>
       </tr>
+      <tr>
+        <td>callbackUrl</td>
+        <td>This is the route by which the response (the final information about the transaction) will be returned.</td>
+        <td>abcdef.com</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>gateway</td>
+        <td>This is the URL that flexpay gave you to carry out these mobile transactions</td>
+        <td>https://beta-backend.flexpay.cd/api/rest/v1/paymentService</td>
+        <td>YES</td>
+      </tr>
     </tbody>
 </table>
 </div>
-
-
-
-     *  callbackUrl     | This is the route by which the response (the final    | abcdef.com    |    YES    
-     *                  | information about the transaction) will be returned.  |               |           
-     * ------------------------------------------------------------------------------------------------------
-     *  gateway         | This is the URL that flexpay gave you to carry out    | backend.flex  |    YES    
-     *                  | these mobile transactions                             |               |           
-     * ------------------------------------------------------------------------------------------------------
-     *
 
 
 
