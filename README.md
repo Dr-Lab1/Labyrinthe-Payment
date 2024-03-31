@@ -8,12 +8,14 @@
       </tr>
     </thead>
     <tbody>
+        
       <tr>
         <th>Params</th>
         <th>Descritption</th>
         <th>Example</th>
         <th>Required</th>
       </tr>
+      
       <tr>
         <td>authorization</td>
         <td>This is the Bearer token sent by Flexpay</td>
@@ -44,6 +46,10 @@
       
     </tbody>
 </table>
+
+
+
+
      *  reference       | This is the transaction reference. In other words,    |               |           
      *                  | the data that will enable the transaction to be traced| xxxxxxxxxx    |    YES    
      *                  | on your side.                                         |               |           
