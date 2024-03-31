@@ -43,8 +43,28 @@
      *                  | by the query                                          | [message] => Transaction envoyée avec succès.
      *                  |                                                       | [orderNumber] => sjXMRrf98ISP243896699032 
      * ----------------------------------------------------------------------------------------------------------------------------
-     *  errors          | A table listing all the errors encountered in the     | [errors] => Could not resolve host: beta-backend
-     *                  | request                                               |                        
-     * ----------------------------------------------------------------------------------------------------------------------------
-     * 
-     */
+ 
+
+<thead>
+      <tr>
+        <th colspan="2">Fonction factorielle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Paramètre</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>$n</td>
+        <td>Le nombre à factoriser (doit être positif)</td>
+      </tr>
+      <tr>
+        <th>Retour</th>
+        <td>La factorielle de n</td>
+      </tr>
+      <tr>
+        <th>Exception</th>
+        <td>InvalidArgumentException si n est négatif</td>
+      </tr>
+    </tbody>
