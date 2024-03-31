@@ -16,8 +16,8 @@
     - <a href="#flexpay-card-service" > Flexpay card service <a/>
       - <a href="#flexpay-check-card-results" > Flexpay check card results <a/>
     - <a href="#flexpay-check-transaction" > Flexpay check transaction <a/>
-    - <a href="#flexpay-merchant-pay-out" > Flexpay merchant pay out <a/>
-    
+    - <a href="#flexpay-merchant-pay-out" > Flexpay merchant pay out <a/>  
+  - <a href="#flexpay" > Labyrinthe API <a/>
 
   
 
