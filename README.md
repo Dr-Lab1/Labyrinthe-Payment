@@ -8,43 +8,37 @@
         <th colspan="2">Fonction factorielle</th>
       </tr>
     </thead>
-    <tbody>
-        
+    <tbody>   
       <tr>
         <th>Params</th>
         <th>Descritption</th>
         <th>Example</th>
         <th>Required</th>
       </tr>
-      
       <tr>
         <td>authorization</td>
         <td>This is the Bearer token sent by Flexpay</td>
         <td>Bearer xxxxx</td>
         <td>YES</td>
       </tr>
-
       <tr>
         <td>merchant</td>
         <td>The merchant code is the one provided by flexpay</td>
         <td>"Orange"</td>
         <td>YES</td>
       </tr>
-
       <tr>
         <td>type</td>
         <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
         <td>1</td>
         <td>YES</td>
       </tr>
-
       <tr>
         <td>type</td>
         <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
         <td>1</td>
         <td>YES</td>
       </tr>
-      
     </tbody>
 </table>
 </div>
