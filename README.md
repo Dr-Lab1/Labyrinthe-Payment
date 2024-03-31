@@ -27,3 +27,24 @@
      *                  | these mobile transactions                             |               |           
      * ------------------------------------------------------------------------------------------------------
      *
+
+
+
+* ----------------------------------------------------------------------------------------------------------------------------
+     *      Params      |                   Descritption                        | Example          
+     * ----------------------------------------------------------------------------------------------------------------------------
+     *  success         | This is the status of the request. Returns 'true' if  | true  or 1
+     *                  | everything works and 'false' if it fails.             | false or 0
+     * ----------------------------------------------------------------------------------------------------------------------------
+     *  message         | This is the message that accompanies the response to  | "Process failed"  
+     *                  | give it greater meaning                               |  
+     * ----------------------------------------------------------------------------------------------------------------------------
+     *  data            | This is an array containing the set of data returned  | [code] => 0
+     *                  | by the query                                          | [message] => Transaction envoyée avec succès.
+     *                  |                                                       | [orderNumber] => sjXMRrf98ISP243896699032 
+     * ----------------------------------------------------------------------------------------------------------------------------
+     *  errors          | A table listing all the errors encountered in the     | [errors] => Could not resolve host: beta-backend
+     *                  | request                                               |                        
+     * ----------------------------------------------------------------------------------------------------------------------------
+     * 
+     */
