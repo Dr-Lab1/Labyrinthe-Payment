@@ -8,6 +8,8 @@
 
 # Installer composer
 
+If you already have a stable version of Composer, you can skip this step.
+
 **Introduction**
 
 Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
