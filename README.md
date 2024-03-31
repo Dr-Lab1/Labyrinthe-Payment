@@ -1,12 +1,13 @@
 # Labyrinthe - Payment : Documentation
 
 # Plan
-- <a href="#description-du-package" > Description du package <a/>
-- <a href="#installer-composer" > Installer Composer <a/>
+- <a href="#package-description" > Package description <a/>
+- <a href="#installer-composer" > Install Composer <a/>
+- <a href="#install-the-Labyrinthe-Payment-package" > Install the Labyrinthe/Payment package <a/>
 
-# Description du package
+# Package description
 
-# Installer composer
+# Install composer
 
 If you already have a stable version of Composer, you can skip this step.
 
@@ -23,6 +24,8 @@ This idea is not new and Composer is strongly inspired by node's <a href="https:
 <a href="https://getcomposer.org/doc/00-intro.md">Official Composer documentation<a/>
  
 <a href="https://getcomposer.org/download/">Composer download link<a/> 
+
+# Install the Labyrinthe/Payment package
 
 <table>
     <thead>
