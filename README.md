@@ -7,6 +7,11 @@
   - <a href="#using-github" > Using GitHub <a/>
 
 - <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
+  - <a href="#global" > Global <a/>
+  - <a href="#flexpay" > Flexpay <a/>
+    - <a href="#Flexpay-quick-use" > Flexpay quick use <a/>
+    - <a href="#Flexpay-mobile" > Flexpay mobile <a/>
+    - <a href="#Flexpay-card" > Flexpay card <a/>
 
   
 
@@ -17,7 +22,17 @@
 ## Using Composer
 ## Using GitHub
 
-# How to use LabyrinthePayment?
+# How to use Labyrinthe\Payment?
+
+## Global
+## Flexpay
+
+### Flexpay quick use
+### Flexpay mobile
+### Flexpay card
+
+
+
 <table>
     <thead>
       <tr>
