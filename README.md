@@ -6,6 +6,8 @@
   - <a href="#using-composer" > Using Composer <a/>
   - <a href="#using-github" > Using GitHub <a/>
 
+- <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
+
   
 
 # Package description
