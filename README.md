@@ -51,16 +51,24 @@
         <td>243896699032</td>
         <td>YES</td>
       </tr>
+      <tr>
+        <td>amount</td>
+        <td>The amount of the transaction </td>
+        <td>100</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>currency</td>
+        <td>This is the currency to be used in the transaction</td>
+        <td>USD</td>
+        <td>YES</td>
+      </tr>
     </tbody>
 </table>
 </div>
 
 
 
-     *  amount          | The amount of the transaction                         | 100           |    YES    
-     * ------------------------------------------------------------------------------------------------------
-     *  currency        | This is the currency to be used in the transaction    | USD           |    YES    
-     * ------------------------------------------------------------------------------------------------------
      *  callbackUrl     | This is the route by which the response (the final    | abcdef.com    |    YES    
      *                  | information about the transaction) will be returned.  |               |           
      * ------------------------------------------------------------------------------------------------------
