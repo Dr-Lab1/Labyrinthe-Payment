@@ -147,11 +147,9 @@
         <td>data</td>
         <td>This is an array containing the set of data returned by the query</td>
         <td>
-            [code] => 0
-          
-            [message] => Transaction envoyée avec succès.
-            
-            [orderNumber] => sjXMRrf98ISP243896699032
+            [code] => 0 \n
+            [message] => Transaction envoyée avec succès. \n
+            [orderNumber] => sjXMRrf98ISP243896699032 \n
         </td>
       </tr>
       <tr>
