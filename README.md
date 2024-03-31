@@ -1,7 +1,6 @@
 # Labyrinthe - Payment : Documentation
 
 
-<div>
 <table>
     <thead>
       <tr>
@@ -77,7 +76,6 @@
       </tr>
     </tbody>
 </table>
-</div>
 
 
 
