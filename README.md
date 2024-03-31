@@ -9,12 +9,14 @@
 - <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
   - <a href="#global" > Global <a/>
   - <a href="#flexpay" > Flexpay <a/>
-    - <a href="#Flexpay-quick-use" > Flexpay quick use <a/>
-    - <a href="#Flexpay-mobile-service" > Flexpay mobile service <a/>
-      - <a href="#Flexpay-mobile-payment" > Flexpay mobile payment <a/>
-      - <a href="#Flexpay-check-mobile-results" > Flexpay check mobile results <a/>
-    - <a href="#Flexpay-card-service" > Flexpay card service <a/>
-      - <a href="#Flexpay-check-card-results" > Flexpay check card results <a/>
+    - <a href="#flexpay-quick-use" > Flexpay quick use <a/>
+    - <a href="#flexpay-mobile-service" > Flexpay mobile service <a/>
+      - <a href="#flexpay-mobile-payment" > Flexpay mobile payment <a/>
+      - <a href="#flexpay-check-mobile-results" > Flexpay check mobile results <a/>
+    - <a href="#flexpay-card-service" > Flexpay card service <a/>
+      - <a href="#flexpay-check-card-results" > Flexpay check card results <a/>
+    - <a href="#flexpay-check-transaction" > Flexpay check transaction <a/>
+    - <a href="#flexpay-merchant-pay-out" > Flexpay merchant pay out <a/>
     
 
   
@@ -37,6 +39,8 @@
 #### Flexpay check mobile results
 ### Flexpay card
 #### Flexpay check card results
+### Flexpay check transaction card
+### Flexpay merchant pay out
 
 
 
