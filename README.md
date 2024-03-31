@@ -6,12 +6,16 @@
   - <a href="#using-composer" > Using Composer <a/>
   - <a href="#using-github" > Using GitHub <a/>
 
+  
+
 # Package description
 
 # Install the Labyrinthe/Payment package
 
-### Using Composer
-### Using GitHub
+## Using Composer
+## Using GitHub
+
+# How to use LabyrinthePayment?
 <table>
     <thead>
       <tr>
