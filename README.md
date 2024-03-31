@@ -3,13 +3,15 @@
 # Plan
 - <a href="#package-description" > Package description <a/>
 - <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
-  - <a href="#install-the-labyrinthepayment-package" > Using Composer <a/>
-  - <a href="#install-the-labyrinthepayment-package" > Using GitHub <a/>
+  - <a href="#using-composer" > Using Composer <a/>
+  - <a href="#using-github" > Using GitHub <a/>
 
 # Package description
 
-## Install the Labyrinthe/Payment package
+# Install the Labyrinthe/Payment package
 
+## Using Composer
+## Using GitHub
 <table>
     <thead>
       <tr>
