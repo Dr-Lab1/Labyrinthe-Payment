@@ -13,5 +13,5 @@ interface FlexPayInterface
 
     public function checkTransaction(array $array): mixed;
 
-
+    public function merchantPayOutService(array $array): mixed;
 }
