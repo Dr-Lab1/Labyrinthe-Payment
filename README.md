@@ -45,7 +45,8 @@
      * ----------------------------------------------------------------------------------------------------------------------------
  
 
-<thead>
+<table>
+    <thead>
       <tr>
         <th colspan="2">Fonction factorielle</th>
       </tr>
@@ -68,3 +69,4 @@
         <td>InvalidArgumentException si n est négatif</td>
       </tr>
     </tbody>
+</table>
