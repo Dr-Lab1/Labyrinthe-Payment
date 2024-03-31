@@ -81,7 +81,7 @@
 <table>
     <thead>
       <tr>
-        <th colspan="4">mobile</th>
+        <th colspan="4">Response</th>
       </tr>
     </thead>
     <tbody>   
