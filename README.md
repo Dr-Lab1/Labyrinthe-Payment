@@ -10,7 +10,7 @@
 
 # Install the Labyrinthe/Payment package
 
-## Using Composer
+### Using Composer
 ### Using GitHub
 <table>
     <thead>
