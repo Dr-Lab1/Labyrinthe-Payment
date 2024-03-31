@@ -72,7 +72,7 @@
       <tr>
         <td>gateway</td>
         <td>This is the URL that flexpay gave you to carry out these mobile transactions</td>
-        <td>https://beta-backend.flexpay</td>
+        <td>flexpay.cd</td>
         <td>YES</td>
       </tr>
     </tbody>
