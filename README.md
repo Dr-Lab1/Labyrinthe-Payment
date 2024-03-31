@@ -5,6 +5,7 @@
 - <a href="#installer-composer" > Install Composer <a/>
 - <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
   - <a href="#install-the-labyrinthepayment-package" > Using Composer <a/>
+  - <a href="#install-the-labyrinthepayment-package" > Using GitHub <a/>
 
 # Package description
 
