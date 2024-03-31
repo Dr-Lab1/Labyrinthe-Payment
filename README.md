@@ -70,6 +70,7 @@
       </tr>
     </tbody>
 </table>
+
 ## Flexpay
 
 ### Flexpay quick use
