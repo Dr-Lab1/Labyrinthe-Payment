@@ -45,14 +45,18 @@
         <td>xxxxxxxxxx</td>
         <td>YES</td>
       </tr>
+      <tr>
+        <td>phone</td>
+        <td>The telephone number involved in the transaction</td>
+        <td>243896699032</td>
+        <td>YES</td>
+      </tr>
     </tbody>
 </table>
 </div>
 
 
 
-     *  phone           | The telephone number involved in the transaction      | 243896699032  |    YES    
-     * ------------------------------------------------------------------------------------------------------
      *  amount          | The amount of the transaction                         | 100           |    YES    
      * ------------------------------------------------------------------------------------------------------
      *  currency        | This is the currency to be used in the transaction    | USD           |    YES    
