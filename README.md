@@ -3,7 +3,7 @@
 # Plan
 - <a href="#package-description" > Package description <a/>
 - <a href="#installer-composer" > Install Composer <a/>
-- <a href="#install-the-Labyrinthe-Payment-package" > Install the Labyrinthe/Payment package <a/>
+- <a href="#install-the-Labyrinthe/Payment-package" > Install the Labyrinthe/Payment package <a/>
 
 # Package description
 
