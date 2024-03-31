@@ -5,13 +5,13 @@
 <table>
     <thead>
       <tr>
-        <th colspan="2">Fonction factorielle</th>
+        <th colspan="4">Fonction factorielle</th>
       </tr>
     </thead>
     <tbody>   
       <tr>
         <th>Params</th>
-        <th>Descritption</th>
+        <th colspan="2">Descritption</th>
         <th>Example</th>
         <th>Required</th>
       </tr>
