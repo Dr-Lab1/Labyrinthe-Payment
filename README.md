@@ -5,7 +5,7 @@
 <table>
     <thead>
       <tr>
-        <th colspan="4">Fonction factorielle</th>
+        <th colspan="2">Fonction factorielle</th>
       </tr>
     </thead>
     <tbody>
