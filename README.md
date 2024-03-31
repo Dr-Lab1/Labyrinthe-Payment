@@ -31,6 +31,45 @@
 # How to use Labyrinthe\Payment?
 
 ## Global
+
+<table>
+    <thead>
+      <tr>
+        <th colspan="4">Response</th>
+      </tr>
+    </thead>
+    <tbody>   
+      <tr>
+        <th width="20%">Params</th>
+        <th width="40%">Descritption</th>
+        <th width="40%">Example</th>
+      </tr>
+      <tr>
+        <td>success</td>
+        <td>This is the status of the request. Returns 'true' if everything works and 'false' if it fails.</td>
+        <td>true or false</td>
+      </tr>
+      <tr>
+        <td>message</td>
+        <td>This is the message that accompanies the response to give it greater meaning</td>
+        <td>"Process failed"</td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>This is an array containing the set of data returned by the query</td>
+        <td>
+            [code] => 0 <br>
+            [message] => Transaction envoyée avec succès. <br>
+            [orderNumber] => sjXMRrf98ISP243896699032 <br>
+        </td>
+      </tr>
+      <tr>
+        <td>errors</td>
+        <td>A table listing all the errors encountered in the request</td>
+        <td>[errors] => Could not resolve host: beta-backend</td>
+      </tr>
+    </tbody>
+</table>
 ## Flexpay
 
 ### Flexpay quick use
@@ -121,41 +160,4 @@
 </table>
 
 
-<table>
-    <thead>
-      <tr>
-        <th colspan="4">Response</th>
-      </tr>
-    </thead>
-    <tbody>   
-      <tr>
-        <th width="20%">Params</th>
-        <th width="40%">Descritption</th>
-        <th width="40%">Example</th>
-      </tr>
-      <tr>
-        <td>success</td>
-        <td>This is the status of the request. Returns 'true' if everything works and 'false' if it fails.</td>
-        <td>true or false</td>
-      </tr>
-      <tr>
-        <td>message</td>
-        <td>This is the message that accompanies the response to give it greater meaning</td>
-        <td>"Process failed"</td>
-      </tr>
-      <tr>
-        <td>data</td>
-        <td>This is an array containing the set of data returned by the query</td>
-        <td>
-            [code] => 0 <br>
-            [message] => Transaction envoyée avec succès. <br>
-            [orderNumber] => sjXMRrf98ISP243896699032 <br>
-        </td>
-      </tr>
-      <tr>
-        <td>errors</td>
-        <td>A table listing all the errors encountered in the request</td>
-        <td>[errors] => Could not resolve host: beta-backend</td>
-      </tr>
-    </tbody>
-</table>
+
