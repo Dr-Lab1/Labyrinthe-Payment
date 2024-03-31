@@ -1,6 +1,35 @@
 # Labyrinthe - Payment : Documentation
 
-* ------------------------------------------------------------------------------------------------------
+
+<table>
+    <thead>
+      <tr>
+        <th colspan="2">Fonction factorielle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Params</th>
+        <th>Descritption</th>
+        <th>Example</th>
+        <th>Required</th>
+      </tr>
+      <tr>
+        <td>authorization</td>
+        <td>This is the Bearer token sent by Flexpay</td>
+        <td>Bearer xxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <th>Retour</th>
+        <td>La factorielle de n</td>
+      </tr>
+      <tr>
+        <th>Exception</th>
+        <td>InvalidArgumentException si n est négatif</td>
+      </tr>
+    </tbody>
+</table>
      *      Params      |                   Descritption                        | Example       | Required   
      * ------------------------------------------------------------------------------------------------------
      *  authorization   | This is the Bearer token sent by Flexpay              | Bearer xxxxx  |    YES    
