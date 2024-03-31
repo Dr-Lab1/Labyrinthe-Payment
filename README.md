@@ -10,8 +10,10 @@
   - <a href="#global" > Global <a/>
   - <a href="#flexpay" > Flexpay <a/>
     - <a href="#Flexpay-quick-use" > Flexpay quick use <a/>
-    - <a href="#Flexpay-mobile" > Flexpay mobile <a/>
-    - <a href="#Flexpay-card" > Flexpay card <a/>
+    - <a href="#Flexpay-mobile-service" > Flexpay mobile service <a/>
+      - <a href="#Flexpay-mobile-service" > Flexpay mobile service <a/>
+      - <a href="#Flexpay-mobile-service" > Flexpay mobile service <a/>
+    - <a href="#Flexpay-card-service" > Flexpay card service <a/>
 
   
 
@@ -28,7 +30,7 @@
 ## Flexpay
 
 ### Flexpay quick use
-### Flexpay mobile
+### Flexpay mobile service
 ### Flexpay card
 
 
