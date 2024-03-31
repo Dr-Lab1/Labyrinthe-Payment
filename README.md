@@ -8,7 +8,7 @@
 
 # Package description
 
-# Install the Labyrinthe/Payment package
+#Install the Labyrinthe/Payment package
 
 <table>
     <thead>
