@@ -11,7 +11,7 @@
 # Install the Labyrinthe/Payment package
 
 ## Using Composer
-## Using GitHub
+### Using GitHub
 <table>
     <thead>
       <tr>
