@@ -5,7 +5,7 @@
 <table>
     <thead>
       <tr>
-        <th colspan="4">Fonction factorielle</th>
+        <th colspan="4">mobile</th>
       </tr>
     </thead>
     <tbody>   
@@ -39,16 +39,18 @@
         <td>1</td>
         <td>YES</td>
       </tr>
+      <tr>
+        <td>reference</td>
+        <td>This is the transaction reference. In other words, the data that will enable the transaction to be traced on your side. </td>
+        <td>xxxxxxxxxx</td>
+        <td>YES</td>
+      </tr>
     </tbody>
 </table>
 </div>
 
 
 
-     *  reference       | This is the transaction reference. In other words,    |               |           
-     *                  | the data that will enable the transaction to be traced| xxxxxxxxxx    |    YES    
-     *                  | on your side.                                         |               |           
-     * ------------------------------------------------------------------------------------------------------
      *  phone           | The telephone number involved in the transaction      | 243896699032  |    YES    
      * ------------------------------------------------------------------------------------------------------
      *  amount          | The amount of the transaction                         | 100           |    YES    
