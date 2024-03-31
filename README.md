@@ -4,7 +4,7 @@
 <table>
     <thead>
       <tr>
-        <th colspan="2">Fonction factorielle</th>
+        <th colspan="4">Fonction factorielle</th>
       </tr>
     </thead>
     <tbody>
@@ -20,25 +20,30 @@
         <td>Bearer xxxxx</td>
         <td>YES</td>
       </tr>
+
       <tr>
-        <th>Retour</th>
-        <td>La factorielle de n</td>
+        <td>merchant</td>
+        <td>The merchant code is the one provided by flexpay</td>
+        <td>"Orange"</td>
+        <td>YES</td>
       </tr>
+
       <tr>
-        <th>Exception</th>
-        <td>InvalidArgumentException si n est négatif</td>
+        <td>type</td>
+        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
+        <td>1</td>
+        <td>YES</td>
       </tr>
+
+      <tr>
+        <td>type</td>
+        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
+        <td>1</td>
+        <td>YES</td>
+      </tr>
+      
     </tbody>
 </table>
-     *      Params      |                   Descritption                        | Example       | Required   
-     * ------------------------------------------------------------------------------------------------------
-     *  authorization   | This is the Bearer token sent by Flexpay              | Bearer xxxxx  |    YES    
-     * ------------------------------------------------------------------------------------------------------
-     *  merchant        | The merchant code is the one provided by flexpay      | "Orange"      |    YES    
-     * ------------------------------------------------------------------------------------------------------
-     *  type            | This is the type of transaction you want to carry out.| 1             |    YES    
-     *                  | In our case it's mobile. So the type will be "1".     |               |           
-     * ------------------------------------------------------------------------------------------------------
      *  reference       | This is the transaction reference. In other words,    |               |           
      *                  | the data that will enable the transaction to be traced| xxxxxxxxxx    |    YES    
      *                  | on your side.                                         |               |           
