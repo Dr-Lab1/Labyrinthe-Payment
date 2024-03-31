@@ -131,7 +131,7 @@
       <tr>
         <th width="20%">Params</th>
         <th width="40%">Descritption</th>
-        <th width="20%">Example</th>
+        <th width="40%">Example</th>
       </tr>
       <tr>
         <td>success</td>
