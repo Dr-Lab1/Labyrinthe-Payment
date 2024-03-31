@@ -10,10 +10,10 @@
     </thead>
     <tbody>   
       <tr>
-        <th>Params</th>
-        <th colspan="2">Descritption</th>
-        <th>Example</th>
-        <th>Required</th>
+        <th width="10%">Params</th>
+        <th width="10%">Descritption</th>
+        <th width="10%">Example</th>
+        <th width="10%">Required</th>
       </tr>
       <tr>
         <td>authorization</td>
