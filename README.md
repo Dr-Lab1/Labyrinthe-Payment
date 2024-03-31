@@ -11,9 +11,11 @@
   - <a href="#flexpay" > Flexpay <a/>
     - <a href="#Flexpay-quick-use" > Flexpay quick use <a/>
     - <a href="#Flexpay-mobile-service" > Flexpay mobile service <a/>
-      - <a href="#Flexpay-mobile-service" > Flexpay mobile service <a/>
-      - <a href="#Flexpay-mobile-service" > Flexpay mobile service <a/>
+      - <a href="#Flexpay-mobile-payment" > Flexpay mobile payment <a/>
+      - <a href="#Flexpay-check-mobile-results" > Flexpay check mobile results <a/>
     - <a href="#Flexpay-card-service" > Flexpay card service <a/>
+      - <a href="#Flexpay-check-card-results" > Flexpay check card results <a/>
+    
 
   
 
@@ -31,7 +33,10 @@
 
 ### Flexpay quick use
 ### Flexpay mobile service
+#### Flexpay mobile payment
+#### Flexpay check mobile results
 ### Flexpay card
+#### Flexpay check card results
 
 
 
