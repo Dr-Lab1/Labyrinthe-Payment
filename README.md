@@ -1,1 +1,2 @@
-# Labyrinthe - Payment Documentation
+# Labyrinthe - Payment : Documentation
+
