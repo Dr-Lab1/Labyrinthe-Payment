@@ -78,44 +78,41 @@
 </table>
 
 
-
-* ----------------------------------------------------------------------------------------------------------------------------
-     *      Params      |                   Descritption                        | Example          
-     * ----------------------------------------------------------------------------------------------------------------------------
-     *  success         | This is the status of the request. Returns 'true' if  | true  or 1
-     *                  | everything works and 'false' if it fails.             | false or 0
-     * ----------------------------------------------------------------------------------------------------------------------------
-     *  message         | This is the message that accompanies the response to  | "Process failed"  
-     *                  | give it greater meaning                               |  
-     * ----------------------------------------------------------------------------------------------------------------------------
-     *  data            | This is an array containing the set of data returned  | [code] => 0
-     *                  | by the query                                          | [message] => Transaction envoyée avec succès.
-     *                  |                                                       | [orderNumber] => sjXMRrf98ISP243896699032 
-     * ----------------------------------------------------------------------------------------------------------------------------
- 
-
 <table>
     <thead>
       <tr>
-        <th colspan="2">Fonction factorielle</th>
+        <th colspan="4">mobile</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody>   
       <tr>
-        <th>Paramètre</th>
-        <th>Description</th>
+        <th width="20%">Params</th>
+        <th width="40%">Descritption</th>
+        <th width="20%">Example</th>
       </tr>
       <tr>
-        <td>$n</td>
-        <td>Le nombre à factoriser (doit être positif)</td>
+        <td>success</td>
+        <td>This is the status of the request. Returns 'true' if everything works and 'false' if it fails.</td>
+        <td>true or false</td>
       </tr>
       <tr>
-        <th>Retour</th>
-        <td>La factorielle de n</td>
+        <td>message</td>
+        <td>This is the message that accompanies the response to give it greater meaning</td>
+        <td>"Process failed"</td>
       </tr>
       <tr>
-        <th>Exception</th>
-        <td>InvalidArgumentException si n est négatif</td>
+        <td>data</td>
+        <td>This is an array containing the set of data returned by the query</td>
+        <td>
+            [code] => 0
+            [message] => Transaction envoyée avec succès.
+            [orderNumber] => sjXMRrf98ISP243896699032
+        </td>
+      </tr>
+      <tr>
+        <td>errors</td>
+        <td>A table listing all the errors encountered in the request</td>
+        <td>[errors] => Could not resolve host: beta-backend</td>
       </tr>
     </tbody>
 </table>
