@@ -2,30 +2,11 @@
 
 # Plan
 - <a href="#package-description" > Package description <a/>
-- <a href="#installer-composer" > Install Composer <a/>
 - <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
   - <a href="#install-the-labyrinthepayment-package" > Using Composer <a/>
   - <a href="#install-the-labyrinthepayment-package" > Using GitHub <a/>
 
 # Package description
-
-# Install composer
-
-If you already have a stable version of Composer, you can skip this step.
-
-**Introduction**
-
-Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
-
-**Dependency management**
-
-Composer is not a package manager in the same sense as Yum or Apt are. Yes, it deals with "packages" or libraries, but it manages them on a per-project basis, installing them in a directory (e.g. vendor) inside your project. By default, it does not install anything globally. Thus, it is a dependency manager. It does however support a "global" project for convenience via the global command.
-
-This idea is not new and Composer is strongly inspired by node's <a href="https://www.npmjs.com/" target="_blank">npm<a/> and ruby's <a href="https://bundler.io/" target="_blank">bundler<a/> de ruby.
-
-<a href="https://getcomposer.org/doc/00-intro.md">Official Composer documentation<a/>
- 
-<a href="https://getcomposer.org/download/">Composer download link<a/> 
 
 # Install the Labyrinthe/Payment package
 
