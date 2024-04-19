@@ -58,7 +58,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            $this->setResult(false, 'Une erreur lors du traitement de votre requête', $json, [], curl_error($ch));
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête  ou vérifier votre connexion', $json, [], curl_error($ch));
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
