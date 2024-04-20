@@ -1,5 +1,79 @@
 # Labyrinthe - Payment : Documentation
 
+# Plan
+- <a href="#package-description" > Package description <a/>
+- <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
+  - <a href="#using-composer" > Using Composer <a/>
+  - <a href="#using-github" > Using GitHub <a/>
+
+- <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
+  - <a href="#global" > Global <a/>
+  - <a href="#flexpay" > Flexpay <a/>
+    - <a href="#flexpay-quick-use" > Flexpay quick use <a/>
+    - <a href="#flexpay-mobile-service" > Flexpay mobile service <a/>
+      - <a href="#flexpay-mobile-payment" > Flexpay mobile payment <a/>
+      - <a href="#flexpay-check-mobile-results" > Flexpay check mobile results <a/>
+    - <a href="#flexpay-card-service" > Flexpay card service <a/>
+      - <a href="#flexpay-check-card-results" > Flexpay check card results <a/>
+    - <a href="#flexpay-check-transaction" > Flexpay check transaction <a/>
+    - <a href="#flexpay-merchant-pay-out" > Flexpay merchant pay out <a/>  
+  - <a href="#labyrinthe-api" > Labyrinthe API <a/>
+
+  
+
+# Package description
+
+# Install the Labyrinthe/Payment package
+
+## Using Composer
+## Using GitHub
+
+# How to use Labyrinthe\Payment?
+
+## Global
+
+<table>
+    <thead>
+      <tr>
+        <th colspan="4">Response</th>
+      </tr>
+    </thead>
+    <tbody>   
+      <tr>
+        <th width="20%">Params</th>
+        <th width="40%">Descritption</th>
+        <th width="40%">Example</th>
+      </tr>
+      <tr>
+        <td>success</td>
+        <td>This is the status of the request. Returns 'true' if everything works and 'false' if it fails.</td>
+        <td>true or false</td>
+      </tr>
+      <tr>
+        <td>message</td>
+        <td>This is the message that accompanies the response to give it greater meaning</td>
+        <td>"Process failed"</td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>This is an array containing the set of data returned by the query</td>
+        <td>
+            [code] => 0 <br>
+            [message] => Transaction envoyée avec succès. <br>
+            [orderNumber] => sjXMRrf98ISP243896699032 <br>
+        </td>
+      </tr>
+      <tr>
+        <td>errors</td>
+        <td>A table listing all the errors encountered in the request</td>
+        <td>[errors] => Could not resolve host: beta-backend</td>
+      </tr>
+    </tbody>
+</table>
+
+## Flexpay
+
+### Flexpay quick use
 
 <table>
     <thead>
@@ -77,11 +151,13 @@
     </tbody>
 </table>
 
+### Flexpay mobile service
+#### Flexpay mobile payment
 
 <table>
     <thead>
       <tr>
-        <th colspan="4">Response</th>
+        <th colspan="4">mobile</th>
       </tr>
     </thead>
     <tbody>   
@@ -89,30 +165,80 @@
         <th width="20%">Params</th>
         <th width="40%">Descritption</th>
         <th width="20%">Example</th>
+        <th width="20%">Required</th>
       </tr>
       <tr>
-        <td>success</td>
-        <td>This is the status of the request. Returns 'true' if everything works and 'false' if it fails.</td>
-        <td>true or false</td>
+        <td>authorization</td>
+        <td>This is the Bearer token sent by Flexpay</td>
+        <td>Bearer xxxxx</td>
+        <td>YES</td>
       </tr>
       <tr>
-        <td>message</td>
-        <td>This is the message that accompanies the response to give it greater meaning</td>
-        <td>"Process failed"</td>
+        <td>merchant</td>
+        <td>The merchant code is the one provided by flexpay</td>
+        <td>"Orange"</td>
+        <td>YES</td>
       </tr>
       <tr>
-        <td>data</td>
-        <td>This is an array containing the set of data returned by the query</td>
-        <td>
-            [code] => 0
-            [message] => Transaction envoyée avec succès.
-            [orderNumber] => sjXMRrf98ISP243896699032
-        </td>
+        <td>type</td>
+        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
+        <td>1</td>
+        <td>YES</td>
       </tr>
       <tr>
-        <td>errors</td>
-        <td>A table listing all the errors encountered in the request</td>
-        <td>[errors] => Could not resolve host: beta-backend</td>
+        <td>type</td>
+        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
+        <td>1</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>reference</td>
+        <td>This is the transaction reference. In other words, the data that will enable the transaction to be traced on your side. </td>
+        <td>xxxxxxxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>phone</td>
+        <td>The telephone number involved in the transaction</td>
+        <td>243896699032</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>amount</td>
+        <td>The amount of the transaction </td>
+        <td>100</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>currency</td>
+        <td>This is the currency to be used in the transaction</td>
+        <td>USD</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>callbackUrl</td>
+        <td>This is the route by which the response (the final information about the transaction) will be returned.</td>
+        <td>abcdef.com</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>gateway</td>
+        <td>This is the URL that flexpay gave you to carry out these mobile transactions</td>
+        <td>flexpay.cd</td>
+        <td>YES</td>
       </tr>
     </tbody>
 </table>
+
+#### Flexpay check mobile results
+### Flexpay card
+#### Flexpay check card results
+### Flexpay check transaction card
+### Flexpay merchant pay out
+
+## Labyrinthe API
+
+
+
+
+
