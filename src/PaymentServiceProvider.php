@@ -40,7 +40,14 @@ class paymentServiceProvider
         $this->result["errors"] = $errors;
 
         if ($json) {
-            $this->result = json_encode($this->result);
+            $this->result = $this->parseToJSON($this->result);
         }
+    }
+
+    protected function parseToJSON(array $parse)
+    {
+        $parser = json_encode($parse);
+
+        return json_decode($parser);
     }
 }

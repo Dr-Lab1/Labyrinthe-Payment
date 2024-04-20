@@ -4,6 +4,11 @@
     "type": "library",
     "license": "MIT",
     "version": "1.0.0",
+    "homepage": "https://github.com/Dr-Lab1/Labyrinthe-Payment",
+    "keywords": [
+        "labyrinthe",
+        "payment"
+    ],
     "autoload": {
         "psr-4": {
             "Labyrinthe\\Payment\\": "src/"
@@ -13,9 +18,17 @@
         {
             "name": "Jonathan Bahati Kukwabantu",
             "email": "jbkukwabantu@gmail.com",
-            "homepage": "https://github.com/Dr-Lab1",
+            "homepage": "https://labyrinthe.io",
             "role": "Head developer"
         }
     ],
-    "require": {}
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.5"
+    }
 }

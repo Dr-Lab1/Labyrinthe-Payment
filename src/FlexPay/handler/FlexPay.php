@@ -39,15 +39,19 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         if ($validator) {
             $this->result["errors"] = $validator;
+
+            if ($json)
+                return $this->parseToJSON($this->result);
 
             return $this->result;
         }
 
         $this->setParams($request);
 
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
 
         $ch = curl_init();
 
@@ -107,13 +111,16 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         if ($validator) {
             $this->result["errors"] = $validator;
 
+            if ($json)
+                return $this->parseToJSON($this->result);
+
             return $this->result;
         }
-
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
 
         if (!$request["code"]) {
             #Le paiement a reussi 
@@ -151,13 +158,16 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         if ($validator) {
             $this->result["errors"] = $validator;
 
+            if ($json)
+                return $this->parseToJSON($this->result);
+
             return $this->result;
         }
-
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
 
         if (!$request["code"]) {
             #Le paiement a reussi 
@@ -192,15 +202,18 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         if ($validator) {
             $this->result["errors"] = $validator;
+
+            if ($json)
+                return $this->parseToJSON($this->result);
 
             return $this->result;
         }
 
         $this->setParams($request);
-
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
 
         $ch = curl_init();
 
@@ -260,15 +273,18 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
+        $json = isset($options['JSON']) ? $options['JSON'] : null;
+
         if ($validator) {
             $this->result["errors"] = $validator;
+
+            if ($json)
+                return $this->parseToJSON($this->result);
 
             return $this->result;
         }
 
         $this->setParams($request);
-
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
 
         $ch = curl_init();
 
