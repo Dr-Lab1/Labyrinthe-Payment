@@ -4,7 +4,7 @@ namespace Labyrinthe\Payment;
 
 use Labyrinthe\Payment\Filter\Filter;
 
-class paymentServiceProvider
+class paymentServiceProvider extends kernel
 {
 
     use Filter;

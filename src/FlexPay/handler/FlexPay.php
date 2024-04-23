@@ -75,6 +75,15 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             }
         }
 
+        $this->history(
+            [
+                "provider" => "flexpay",
+                "method" => "mobile-payment",
+                "amount" => $this->amount,
+                "currency" => $this->currency
+            ]
+        );
+
         # Final return
         return $this->result;
     }
@@ -130,6 +139,13 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             $this->setResult(false, "Le paiement a échoué", $json);
         }
 
+        $this->history(
+            [
+                "provider" => "flexpay",
+                "method" => "check-results"
+            ]
+        );
+
         return $this->result;
     }
 
@@ -176,6 +192,13 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             #Le paiement a échoué 
             $this->setResult(false, "Le paiement a échoué", $json);
         }
+
+        $this->history(
+            [
+                "provider" => "flexpay",
+                "method" => "check-results"
+            ]
+        );
 
         return $this->result;
     }
@@ -239,6 +262,13 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
                     break;
             }
         }
+
+        $this->history(
+            [
+                "provider" => "flexpay",
+                "method" => "check-transaction",
+            ]
+        );
 
         # Final return
         return $this->result;
@@ -307,6 +337,13 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
                 $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
             }
         }
+
+        $this->history(
+            [
+                "provider" => "flexpay",
+                "method" => "pay-out",
+            ]
+        );
 
         # Final return
         return $this->result;
