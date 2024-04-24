@@ -111,6 +111,8 @@ FlexPaie is the electronic payments application that supports all electronic pay
 
 ### Flexpay mobile service
 
+In the mobile section, we'll be looking at all the services related to mobile payment. In other words, making a payment and checking the results of different payments. 
+
 #### Flexpay mobile payment
 
 <table>
