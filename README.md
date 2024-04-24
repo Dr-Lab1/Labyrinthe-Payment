@@ -23,6 +23,10 @@
 
 # Package description
 
+En programmation, un package (ou module selon les langages) est un ensemble regroupant divers éléments du code, tels que des classes, des fonctions, des variables et des constantes. Il s'agit d'un outil d'organisation crucial qui permet de structurer le code de manière modulaire et cohérente, favorisant ainsi sa lisibilité, sa maintenabilité et sa réutilisabilité.
+
+Le but principal de notre package est de disponibiliser des classes et fonctions qui facilitent l'intégration des différents agrégateurs de paiement tels que Flexpay, Stripe,... Au lieu de coder la logique from scratch, vous gagnerez du temps en utilisant ce package. Car dans certains cas, une seule ligne de code suffira pour exécuter des fonctions complexes.
+
 # Install the Labyrinthe/Payment package
 
 ## Using Composer
