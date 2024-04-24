@@ -194,7 +194,10 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
 </table>
 
     $array = [
-      ""
+      "authorization" => "Orange",
+      "merchant" => "orange",
+      "type" => 1
+      ...
     ];
 
 
