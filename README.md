@@ -52,9 +52,19 @@ With installation via github, there are two ways out. Either by git clone or by 
 
         https://github.com/Dr-Lab1/Labyrinthe-Payment
 
-# How to use Labyrinthe\Payment? 
+# How to use Labyrinthe\Payment ? 
 
 ## Global
+
+Using only static methods to simplify its use, the package is easy to understand and practical to use.
+
+For example, to make a mobile payment from an X aggregator, the code to call the methods for this operation will be fairly straightforward.
+
+Example:
+
+      // array of params
+      $array = [];
+      $mobile_payment = AggregatorServiceProvider::mobile($array);
 
 Responses from package methods and classes all have the same format. In other words, you don't have to go into the details of the response to understand its nature.
 
