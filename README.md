@@ -52,7 +52,7 @@ With installation via github, there are two ways out. Either by git clone or by 
 
         https://github.com/Dr-Lab1/Labyrinthe-Payment
 
-# How to use Labyrinthe\Payment?
+# How to use Labyrinthe\Payment? 
 
 ## Global
 
