@@ -46,11 +46,11 @@ With installation via github, there are two ways out. Either by git clone or by 
 
 1. Git clone
 
-      git clone https://github.com/Dr-Lab1/Labyrinthe-Payment
+        git clone https://github.com/Dr-Lab1/Labyrinthe-Payment
    
 3. Get the link and download
 
-      https://github.com/Dr-Lab1/Labyrinthe-Payment
+        https://github.com/Dr-Lab1/Labyrinthe-Payment
 
 # How to use Labyrinthe\Payment?
 
