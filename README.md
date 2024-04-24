@@ -198,8 +198,8 @@ Here is a code snippet showing how to fill its parameters :
     $array = [
       "authorization" => "Orange",
       "merchant" => "orange",
-      "type" => 1
-      ...
+      "type" => 1,
+      // Continue with other params...
     ];
     
 After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
