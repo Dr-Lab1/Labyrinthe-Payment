@@ -105,6 +105,13 @@ Responses from package methods and classes all have the same format. In other wo
     </tbody>
 </table>
 
+The default response format is JSON. Why is this? Because it's easy to access. To access the JSON key 'success', for example, all you need to do is :
+
+    $flexpay->success
+    // we can print it
+    echo $flexpay->success;
+
+
 ## Flexpay
 
 FlexPaie is the electronic payments application that supports all electronic payment methods, with all operators and bank cards. It's the ideal solution for all merchants and customers. You no longer need to have an electronic account for each network - a single application operational with : Visa, Mastercard, Afrimoney, Orange Money, Airtel Money, M-Pesa etc.
