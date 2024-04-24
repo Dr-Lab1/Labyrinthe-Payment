@@ -29,7 +29,7 @@ The main aim of our package is to make available classes and functions that faci
 
 # Install the Labyrinthe/Payment package
 
-
+Our package can be installed in a number of ways, including composer and github.
 
 ## Using Composer
 ## Using GitHub
