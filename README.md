@@ -32,6 +32,11 @@ The main aim of our package is to make available classes and functions that faci
 Our package can be installed in a number of ways, including composer and github.
 
 ## Using Composer
+
+If you haven't composed yet, it's time to install it. After all, it's the main installer of PHP dependencies.
+
+<a href="https://getcomposer.org/download/"> Click here to install composer </a>
+
 ## Using GitHub
 
 # How to use Labyrinthe\Payment?
