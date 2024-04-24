@@ -56,9 +56,7 @@ With installation via github, there are two ways out. Either by git clone or by 
 
 ## Global
 
-Using only static methods to simplify its use, the package is easy to understand and practical to use.
-
-For example, to make a mobile payment from an X aggregator, the code to call the methods for this operation will be fairly straightforward.
+Using only static methods to simplify its use, the package is easy to understand and practical to use. For example, to make a mobile payment from an X aggregator, the code to call the methods for this operation will be fairly straightforward.
 
 Example:
 
