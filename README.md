@@ -107,6 +107,8 @@ Responses from package methods and classes all have the same format. In other wo
 
 ## Flexpay
 
+FlexPaie is the electronic payments application that supports all electronic payment methods, with all operators and bank cards. It's the ideal solution for all merchants and customers. You no longer need to have an electronic account for each network - a single application operational with : Visa, Mastercard, Afrimoney, Orange Money, Airtel Money, M-Pesa etc.
+
 ### Flexpay quick use
 
 <table>
