@@ -34,7 +34,6 @@ Our package can be installed in a number of ways, including composer and github.
 ## Using Composer
 
 If you haven't composed yet, it's time to install it. After all, it's the main installer of PHP dependencies.
-
 <a href="https://getcomposer.org/download/"> Click here to install composer</a>.
 
 After installation, go to the root of your project and issue this command:
