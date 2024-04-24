@@ -111,7 +111,7 @@ The default response format is JSON. Why is this? Because it's easy to access. T
     // we can print it
     echo $flexpay->success;
 
-Some people are more comfortable with arrays than JSON in PHP, so they'll pass an array $options as a parameter to render the results as an array.
+Some people are more comfortable with arrays than JSON in PHP, so they'll pass an array <code>$options</code> as a parameter to render the results as an array.
 
     $options = [
       "JSON" => false
