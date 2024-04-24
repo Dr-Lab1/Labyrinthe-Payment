@@ -23,11 +23,13 @@
 
 # Package description
 
-En programmation, un package (ou module selon les langages) est un ensemble regroupant divers éléments du code, tels que des classes, des fonctions, des variables et des constantes. Il s'agit d'un outil d'organisation crucial qui permet de structurer le code de manière modulaire et cohérente, favorisant ainsi sa lisibilité, sa maintenabilité et sa réutilisabilité.
+In programming, a package (or module, depending on the language) is a collection of various code elements, such as classes, functions, variables and constants. It's a crucial organizational tool that enables code to be structured in a modular and coherent way, making it easier to read, maintain and reuse.
 
-Le but principal de notre package est de disponibiliser des classes et fonctions qui facilitent l'intégration des différents agrégateurs de paiement tels que Flexpay, Stripe,... Au lieu de coder la logique from scratch, vous gagnerez du temps en utilisant ce package. Car dans certains cas, une seule ligne de code suffira pour exécuter des fonctions complexes.
+The main aim of our package is to make available classes and functions that facilitate the integration of various payment aggregators such as Flexpay, Stripe,... Instead of coding the logic from scratch, you'll save time by using this package. In some cases, a single line of code will suffice to execute complex functions.
 
 # Install the Labyrinthe/Payment package
+
+
 
 ## Using Composer
 ## Using GitHub
