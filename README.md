@@ -201,7 +201,10 @@ Here is a code snippet showing how to fill its parameters :
       "type" => 1
       ...
     ];
+    
+After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
 
+    $flexpay = FlexpayServiceProvider::mobile($array);
 
 #### Flexpay check mobile results
 ### Flexpay card
