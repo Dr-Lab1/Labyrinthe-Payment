@@ -193,6 +193,8 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
     </tbody>
 </table>
 
+Here is a code snippet showing how to fill its parameters :
+
     $array = [
       "authorization" => "Orange",
       "merchant" => "orange",
