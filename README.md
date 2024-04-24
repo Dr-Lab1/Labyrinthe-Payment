@@ -37,7 +37,7 @@ If you haven't composed yet, it's time to install it. After all, it's the main i
 
 <a href="https://getcomposer.org/download/"> Click here to install composer</a>.
 
-After installation, you can make this command :
+After installation, go to the root of your project and issue this command:
 
       composer install labyrinthe-payment
 
