@@ -119,7 +119,7 @@ Some people are more comfortable with arrays than JSON in PHP, so they'll pass a
 
 Now you can pass your parameters to the desired method to retrieve your data in the format in which you feel most comfortable.
 
-  $mobile_payment = AggregatorServiceProvider::mobile($array, $options);
+    $mobile_payment = AggregatorServiceProvider::mobile($array, $options);
 
 ## Flexpay
 
