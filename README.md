@@ -193,6 +193,11 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
     </tbody>
 </table>
 
+    $array = [
+      ""
+    ];
+
+
 #### Flexpay check mobile results
 ### Flexpay card
 #### Flexpay check card results
