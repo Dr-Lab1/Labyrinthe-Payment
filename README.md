@@ -35,7 +35,11 @@ Our package can be installed in a number of ways, including composer and github.
 
 If you haven't composed yet, it's time to install it. After all, it's the main installer of PHP dependencies.
 
-<a href="https://getcomposer.org/download/"> Click here to install composer </a>
+<a href="https://getcomposer.org/download/"> Click here to install composer</a>.
+
+After installation, you can make this command :
+
+      composer install labyrinthe-payment
 
 ## Using GitHub
 
