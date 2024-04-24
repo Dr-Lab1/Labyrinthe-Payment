@@ -56,6 +56,8 @@ With installation via github, there are two ways out. Either by git clone or by 
 
 ## Global
 
+Responses from package methods and classes all have the same format. In other words, you don't have to go into the details of the response to understand its nature.
+
 <table>
     <thead>
       <tr>
