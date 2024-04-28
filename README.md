@@ -5,7 +5,7 @@
 - <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
   - <a href="#using-composer" > Using Composer <a/>
   - <a href="#using-github" > Using GitHub <a/>
-  
+
 - <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
   - <a href="#global" > Global <a/>
   - <a href="#flexpay" > Flexpay <a/>
