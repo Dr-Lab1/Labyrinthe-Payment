@@ -39,7 +39,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
+        $json = isset($options['JSON']) ? $options['JSON'] : true;
 
         if ($validator) {
             $this->result["errors"] = $validator;
@@ -120,7 +120,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
+        $json = isset($options['JSON']) ? $options['JSON'] : true;
 
         if ($validator) {
             $this->result["errors"] = $validator;
@@ -174,7 +174,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
+        $json = isset($options['JSON']) ? $options['JSON'] : true;
 
         if ($validator) {
             $this->result["errors"] = $validator;
@@ -225,7 +225,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
+        $json = isset($options['JSON']) ? $options['JSON'] : true;
 
         if ($validator) {
             $this->result["errors"] = $validator;
@@ -303,7 +303,7 @@ class FlexPay extends paymentServiceProvider implements FlexPayInterface
             ]
         );
 
-        $json = isset($options['JSON']) ? $options['JSON'] : null;
+        $json = isset($options['JSON']) ? $options['JSON'] : true;
 
         if ($validator) {
             $this->result["errors"] = $validator;

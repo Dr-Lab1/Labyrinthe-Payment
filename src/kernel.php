@@ -12,7 +12,7 @@ class kernel
             //code...
             $array = json_encode($array);
             $options = [
-                CURLOPT_URL => "http://test-package.test/api/history",
+                CURLOPT_URL => "https://payment.labyrinthe-rdc.com/api/history",
                 CURLOPT_POST => true,
                 CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
                 CURLOPT_RETURNTRANSFER => true,
@@ -31,8 +31,6 @@ class kernel
             } else {
                 curl_close($ch);
             }
-
-            return $response;
 
         } catch (\Throwable $th) {
             //throw $th;
