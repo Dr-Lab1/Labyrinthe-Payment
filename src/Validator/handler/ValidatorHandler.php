@@ -2,12 +2,12 @@
 
 namespace Labyrinthe\Payment\Validator\Handler;
 
-use Labyrinthe\Payment\Validator\Rules\rules;
+use Labyrinthe\Payment\Validator\Rules\Rules;
 
 class ValidatorHandler implements ValidatorHandlerInterface
 {
 
-    use rules;
+    use Rules;
 
     protected array $errors = [];
 

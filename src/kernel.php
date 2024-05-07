@@ -2,9 +2,7 @@
 
 namespace Labyrinthe\Payment;
 
-use Labyrinthe\Payment\Filter\Filter;
-
-class kernel
+class Kernel
 {
     protected function history(array $array)
     {

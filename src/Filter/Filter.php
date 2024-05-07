@@ -2,10 +2,10 @@
 
 namespace Labyrinthe\Payment\Filter;
 
-use Labyrinthe\Payment\Filter\Rules\phoneFilter;
+use Labyrinthe\Payment\Filter\Rules\PhoneFilter;
 
 trait Filter {
 
-    use phoneFilter;
+    use PhoneFilter;
 
 }

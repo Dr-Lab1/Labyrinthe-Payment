@@ -4,11 +4,10 @@ namespace Labyrinthe\Payment;
 
 use Labyrinthe\Payment\Filter\Filter;
 
-class paymentServiceProvider extends kernel
+class paymentServiceProvider extends Kernel
 {
 
     use Filter;
-
 
     /**
      * From now on, this format will be used for package responses. 

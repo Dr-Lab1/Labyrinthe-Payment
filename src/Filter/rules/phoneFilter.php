@@ -2,12 +2,12 @@
 
 namespace Labyrinthe\Payment\Filter\Rules;
 
-use Labyrinthe\Payment\Filter\Rules\countriesCodeList;
+use Labyrinthe\Payment\Filter\Rules\CountriesCodeList;
 
-trait phoneFilter
+trait PhoneFilter
 {
     # Traits
-    use countriesCodeList;
+    use CountriesCodeList;
 
     /**
      * This function is used to check and filter whether the user's specific telephone number data conforms to the rules.

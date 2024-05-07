@@ -2,7 +2,7 @@
 
 namespace Labyrinthe\Payment\Validator\Rules;
 
-trait rules
+trait Rules
 {
 
     /**

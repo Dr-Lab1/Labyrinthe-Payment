@@ -2,7 +2,7 @@
 
 namespace Labyrinthe\Payment\Filter\Rules;
 
-trait countriesCodeList {
+trait CountriesCodeList {
 
     /**
      * The list of countries using our system
