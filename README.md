@@ -233,7 +233,7 @@ In your action whose endpoint is your callbackUrl, you will call this static fun
 
     $flexpay = FlexpayServiceProvider::phoneResults($array);
 
-This function will automatically check the result and return the transaction code status. If all is well, it will return true to the success variable and false otherwise.
+This function will automatically check the result and return the transaction code status. If all is well, it will return <code>true</code> to the <code>success</code> variable and <code>false</code> otherwise.
 The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
 
 ### Flexpay card
@@ -249,7 +249,7 @@ In your action whose endpoint is your callbackUrl, you will call this static fun
 
     $flexpay = FlexpayServiceProvider::cardResults($array);
 
-This function will automatically check the result and return the transaction code status. If all is well, it will return true to the success variable and false otherwise.
+This function will automatically check the result and return the transaction code status. If all is well, it will return <code>true</code> to the <code>success</code> variable and <code>false</code> otherwise.
 The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
 
 ### Flexpay check transaction
@@ -291,6 +291,21 @@ There are a few parameters to enter:
       </tr>
     </tbody>
 </table>
+
+
+Here is a code snippet showing how to fill its parameters :
+
+    $array = [
+      "authorization" => "Orange",
+      "gateway" => "https://xyz.cd/check/",
+      "orderNumber" => "azertyytreza",
+    ];
+    
+After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
+
+    $flexpay = FlexpayServiceProvider::checkTransaction($array);
+
+Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
 
 ### Flexpay merchant pay out
 
