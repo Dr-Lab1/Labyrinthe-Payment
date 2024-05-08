@@ -252,7 +252,13 @@ In your action whose endpoint is your callbackUrl, you will call this static fun
 This function will automatically check the result and return the transaction code status. If all is well, it will return true to the success variable and false otherwise.
 The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
 
-### Flexpay check transaction card
+### Flexpay check transaction
+
+Transaction verification is an action aimed at checking the status of a transaction and/or extracting certain details from it. This exercise concerns both mobile and credit card transactions in the system.
+
+There are a few parameters to enter:
+
+
 ### Flexpay merchant pay out
 
 ## Labyrinthe API
