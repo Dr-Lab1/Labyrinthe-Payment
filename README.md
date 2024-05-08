@@ -229,6 +229,12 @@ Now run your code from your controller and process the information as required. 
 In each transaction, you've sent a callbackUrl, which is the url to which the result of the transaction will be sent by the aggregator. 
 But this sending of data needs to be checked to ensure that the right information is being processed (stored in the database, for example). 
 
+In your action whose endpoint is your callbackUrl, you will call this static function :
+
+    $flexpay = FlexpayServiceProvider::mobile($array);
+
+This function will automatically check the result and return the transaction code status. If all is well, it will return true to the success variable and false otherwise.
+
 ### Flexpay card
 #### Flexpay check card results
 ### Flexpay check transaction card
