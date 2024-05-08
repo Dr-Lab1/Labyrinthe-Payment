@@ -231,7 +231,7 @@ But this sending of data needs to be checked to ensure that the right informatio
 
 In your action whose endpoint is your callbackUrl, you will call this static function :
 
-    $flexpay = FlexpayServiceProvider::mobile($array);
+    $flexpay = FlexpayServiceProvider::phoneResults($array);
 
 This function will automatically check the result and return the transaction code status. If all is well, it will return true to the success variable and false otherwise.
 The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
@@ -242,7 +242,15 @@ In this section, we focus on banking transactions. It will cover much more about
 
 #### Flexpay check card results
 
+In each transaction, you've sent a callbackUrl, which is the url to which the result of the transaction will be sent by the aggregator. 
+But this sending of data needs to be checked to ensure that the right information is being processed (stored in the database, for example). 
 
+In your action whose endpoint is your callbackUrl, you will call this static function :
+
+    $flexpay = FlexpayServiceProvider::cardResults($array);
+
+This function will automatically check the result and return the transaction code status. If all is well, it will return true to the success variable and false otherwise.
+The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
 
 ### Flexpay check transaction card
 ### Flexpay merchant pay out
