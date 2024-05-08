@@ -258,6 +258,39 @@ Transaction verification is an action aimed at checking the status of a transact
 
 There are a few parameters to enter:
 
+<table>
+    <thead>
+      <tr>
+        <th colspan="4">mobile</th>
+      </tr>
+    </thead>
+    <tbody>   
+      <tr>
+        <th width="20%">Params</th>
+        <th width="40%">Descritption</th>
+        <th width="20%">Example</th>
+        <th width="20%">Required</th>
+      </tr>
+      <tr>
+        <td>authorization</td>
+        <td>This is the Bearer token sent by Flexpay</td>
+        <td>Bearer xxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>orderNumber</td>
+        <td>This is the transaction orderNumber In other words, the data that will enable the transaction to be traced on your side. </td>
+        <td>xxxxxxxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>gateway</td>
+        <td>This is the URL that flexpay gave you to carry out these transactions</td>
+        <td>flexpay.cd</td>
+        <td>YES</td>
+      </tr>
+    </tbody>
+</table>
 
 ### Flexpay merchant pay out
 
