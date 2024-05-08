@@ -237,7 +237,13 @@ This function will automatically check the result and return the transaction cod
 The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
 
 ### Flexpay card
+
+In this section, we focus on banking transactions. It will cover much more about checking and checking results.
+
 #### Flexpay check card results
+
+
+
 ### Flexpay check transaction card
 ### Flexpay merchant pay out
 
