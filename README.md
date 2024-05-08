@@ -306,8 +306,6 @@ After filling in the table with the correct information provided by Flexpay, ple
 
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
 
-### Flexpay merchant pay out
-
 ## Labyrinthe API
 
 
