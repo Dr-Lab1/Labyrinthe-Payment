@@ -225,6 +225,9 @@ After filling in the table with the correct information provided by Flexpay, ple
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
 
 #### Flexpay check mobile results
+
+In each transaction, you've sent a callbackUrl, which is the url to which the result of the transaction will be sent by the aggregator. But this sending of data needs to be checked to ensure that the right information is being processed (stored in the database, for example). 
+
 ### Flexpay card
 #### Flexpay check card results
 ### Flexpay check transaction card
