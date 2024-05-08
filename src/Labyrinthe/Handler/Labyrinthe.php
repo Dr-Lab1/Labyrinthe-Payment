@@ -28,12 +28,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
         $validator = Validator::make(
             $request,
             [
-                "merchant" => ['required'],
-                "type" => ["required", "number"],
                 "reference" => ['required'],
-                "amount" => ['required', "number"],
-                "currency" => ["required"],
-                "callbackUrl" => ["required"],
                 "phone" => ["required"],
                 "token" => ["required"],
                 "gateway" => ["required"]
@@ -80,8 +75,8 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
             [
                 "provider" => "labyrinthe",
                 "method" => "mobile-payment",
-                "amount" => $this->amount,
-                "currency" => $this->currency
+                "amount" => "100",
+                "currency" => "CDF"
             ]
         );
 
