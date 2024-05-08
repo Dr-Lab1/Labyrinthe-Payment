@@ -35,6 +35,8 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
             ]
         );
 
+        // return $request;
+
         $json = isset($options['JSON']) ? $options['JSON'] : true;
 
         if ($validator) {
@@ -62,10 +64,9 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
-            $code = $jsonRes->code;
 
-            if ($code != "0") {
-                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes);
+            if (! $jsonRes->success) {
+                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes, $jsonRes->errors);
             } else {
                 $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
             }

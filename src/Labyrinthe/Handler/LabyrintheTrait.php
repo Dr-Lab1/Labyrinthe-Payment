@@ -101,7 +101,7 @@ trait LabyrintheTrait
         $this->amount = isset($array["amount"]) ? $array["amount"] : null;
         $this->currency = isset($array["currency"]) ? $array["currency"] : null;
         $this->callbackUrl = isset($array["callbackUrl"]) ? $array["callbackUrl"] : null;
-        $this->phone = isset($array["phone"]) ? $this->phoneNumberFilter($array["phone"], 'COD') : null;
+        $this->phone = isset($array["phone"]) ? $array["phone"] : null;
         $this->token = isset($array["token"]) ? $array["token"] : null;
         $this->orderNumber = isset($array["orderNumber"]) ? $array["orderNumber"] : null;
         $this->gateway = isset($array["gateway"]) ? $array["gateway"] : null;
