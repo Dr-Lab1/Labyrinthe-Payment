@@ -8,6 +8,7 @@
 
 - <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
   - <a href="#global" > Global <a/>
+  - <a href="#labyrinthe-api" > Labyrinthe API <a/>
   - <a href="#flexpay" > Flexpay <a/>
     - <a href="#flexpay-quick-use" > Flexpay quick use <a/>
     - <a href="#flexpay-mobile-service" > Flexpay mobile service <a/>
@@ -16,8 +17,6 @@
     - <a href="#flexpay-card-service" > Flexpay card service <a/>
       - <a href="#flexpay-check-card-results" > Flexpay check card results <a/>
     - <a href="#flexpay-check-transaction" > Flexpay check transaction <a/>
-  - <a href="#labyrinthe-api" > Labyrinthe API <a/>
-
   
 
 # Package description
