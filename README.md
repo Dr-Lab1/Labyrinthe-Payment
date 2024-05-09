@@ -120,6 +120,9 @@ Now you can pass your parameters to the desired method to retrieve your data in 
 
     $mobile_payment = AggregatorServiceProvider::mobile($array, $options);
 
+
+## Labyrinthe API
+
 ## Flexpay
 
 FlexPaie is the electronic payments application that supports all electronic payment methods, with all operators and bank cards. It's the ideal solution for all merchants and customers. You no longer need to have an electronic account for each network - a single application operational with : Visa, Mastercard, Afrimoney, Orange Money, Airtel Money, M-Pesa etc.
@@ -306,7 +309,6 @@ After filling in the table with the correct information provided by Flexpay, ple
 
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
 
-## Labyrinthe API
 
 
 
