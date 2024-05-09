@@ -1,6 +1,6 @@
 # Labyrinthe - Payment : Documentation
 
-# Plan
+## Plan
 - <a href="#package-description" > Package description <a/>
 - <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
   - <a href="#using-composer" > Using Composer <a/>
