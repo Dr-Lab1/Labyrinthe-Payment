@@ -10,7 +10,6 @@
   - <a href="#global" > Global <a/>
   - <a href="#labyrinthe-api" > Labyrinthe API <a/>
   - <a href="#flexpay" > Flexpay <a/>
-    - <a href="#flexpay-quick-use" > Flexpay quick use <a/>
     - <a href="#flexpay-mobile-service" > Flexpay mobile service <a/>
       - <a href="#flexpay-mobile-payment" > Flexpay mobile payment <a/>
       - <a href="#flexpay-check-mobile-results" > Flexpay check mobile results <a/>
