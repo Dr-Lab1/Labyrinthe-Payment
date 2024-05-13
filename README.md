@@ -196,7 +196,7 @@ Now run your code from your controller and process the information as required. 
 
 ### Labyrinthe check transaction
 
-Transaction verification is an action aimed at checking the status of a transaction and/or extracting certain details from it. This exercise concerns both mobile and credit card transactions in the system.
+Transaction verification is an action aimed at checking the status of a transaction and/or extracting certain details from it. This exercise concerns both mobile and card transactions in the system.
 
 There are a few parameters to enter:
 
@@ -383,7 +383,7 @@ The processing of information coming from the aggregator will depend on the resu
 
 ### Flexpay check transaction
 
-Transaction verification is an action aimed at checking the status of a transaction and/or extracting certain details from it. This exercise concerns both mobile and credit card transactions in the system.
+Transaction verification is an action aimed at checking the status of a transaction and/or extracting certain details from it. This exercise concerns both mobile and card transactions in the system.
 
 There are a few parameters to enter:
 
