@@ -1,6 +1,6 @@
 # Labyrinthe - Payment : Documentation
-
-# Plan
+ 
+## Plan
 - <a href="#package-description" > Package description <a/>
 - <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
   - <a href="#using-composer" > Using Composer <a/>
@@ -8,6 +8,7 @@
 
 - <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
   - <a href="#global" > Global <a/>
+  - <a href="#labyrinthe-api" > Labyrinthe API <a/>
   - <a href="#flexpay" > Flexpay <a/>
     - <a href="#flexpay-quick-use" > Flexpay quick use <a/>
     - <a href="#flexpay-mobile-service" > Flexpay mobile service <a/>
@@ -16,9 +17,6 @@
     - <a href="#flexpay-card-service" > Flexpay card service <a/>
       - <a href="#flexpay-check-card-results" > Flexpay check card results <a/>
     - <a href="#flexpay-check-transaction" > Flexpay check transaction <a/>
-    - <a href="#flexpay-merchant-pay-out" > Flexpay merchant pay out <a/>  
-  - <a href="#labyrinthe-api" > Labyrinthe API <a/>
-
   
 
 # Package description
@@ -120,6 +118,9 @@ Some people are more comfortable with arrays than JSON in PHP, so they'll pass a
 Now you can pass your parameters to the desired method to retrieve your data in the format in which you feel most comfortable.
 
     $mobile_payment = AggregatorServiceProvider::mobile($array, $options);
+
+
+## Labyrinthe API
 
 ## Flexpay
 
@@ -225,12 +226,88 @@ After filling in the table with the correct information provided by Flexpay, ple
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
 
 #### Flexpay check mobile results
-### Flexpay card
-#### Flexpay check card results
-### Flexpay check transaction card
-### Flexpay merchant pay out
 
-## Labyrinthe API
+In each transaction, you've sent a callbackUrl, which is the url to which the result of the transaction will be sent by the aggregator. 
+But this sending of data needs to be checked to ensure that the right information is being processed (stored in the database, for example). 
+
+In your action whose endpoint is your callbackUrl, you will call this static function :
+
+    $flexpay = FlexpayServiceProvider::phoneResults($array);
+
+This function will automatically check the result and return the transaction code status. If all is well, it will return <code>true</code> to the <code>success</code> variable and <code>false</code> otherwise.
+The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
+
+### Flexpay card
+
+In this section, we focus on banking transactions. It will cover much more about checking and checking results.
+
+#### Flexpay check card results
+
+In each transaction, you've sent a callbackUrl, which is the url to which the result of the transaction will be sent by the aggregator. 
+But this sending of data needs to be checked to ensure that the right information is being processed (stored in the database, for example). 
+
+In your action whose endpoint is your callbackUrl, you will call this static function :
+
+    $flexpay = FlexpayServiceProvider::cardResults($array);
+
+This function will automatically check the result and return the transaction code status. If all is well, it will return <code>true</code> to the <code>success</code> variable and <code>false</code> otherwise.
+The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
+
+### Flexpay check transaction
+
+Transaction verification is an action aimed at checking the status of a transaction and/or extracting certain details from it. This exercise concerns both mobile and credit card transactions in the system.
+
+There are a few parameters to enter:
+
+<table>
+    <thead>
+      <tr>
+        <th colspan="4">mobile</th>
+      </tr>
+    </thead>
+    <tbody>   
+      <tr>
+        <th width="20%">Params</th>
+        <th width="40%">Descritption</th>
+        <th width="20%">Example</th>
+        <th width="20%">Required</th>
+      </tr>
+      <tr>
+        <td>authorization</td>
+        <td>This is the Bearer token sent by Flexpay</td>
+        <td>Bearer xxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>orderNumber</td>
+        <td>This is the transaction orderNumber In other words, the data that will enable the transaction to be traced on your side. </td>
+        <td>xxxxxxxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>gateway</td>
+        <td>This is the URL that flexpay gave you to carry out these transactions</td>
+        <td>flexpay.cd</td>
+        <td>YES</td>
+      </tr>
+    </tbody>
+</table>
+
+
+Here is a code snippet showing how to fill its parameters :
+
+    $array = [
+      "authorization" => "Orange",
+      "gateway" => "https://xyz.cd/check/",
+      "orderNumber" => "azertyytreza",
+    ];
+    
+After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
+
+    $flexpay = FlexpayServiceProvider::checkTransaction($array);
+
+Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
+
 
 
 
