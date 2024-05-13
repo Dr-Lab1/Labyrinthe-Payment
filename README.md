@@ -9,6 +9,9 @@
 - <a href="#how-to-use-labyrinthepayment" > How to use Labyrinthe\Payment <a/>
   - <a href="#global" > Global <a/>
   - <a href="#labyrinthe-api" > Labyrinthe API <a/>
+    - <a href="#labyrinthe-mobile-service" > Labyrinthe mobile service <a/>
+      - <a href="#flexpay-mobile-payment" > Labyrinthe mobile payment <a/>
+      - <a href="#flexpay-check-mobile-results" > Labyrinthe check mobile results <a/>
   - <a href="#flexpay" > Flexpay <a/>
     - <a href="#flexpay-mobile-service" > Flexpay mobile service <a/>
       - <a href="#flexpay-mobile-payment" > Flexpay mobile payment <a/>
