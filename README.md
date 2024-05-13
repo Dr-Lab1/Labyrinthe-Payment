@@ -172,7 +172,7 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
       <tr>
         <td>gateway</td>
         <td>This is the URL that labyrinthe gave you to carry out these mobile transactions</td>
-        <td>For example : https://payment.labyrinthe-rdc.com/ </td>
+        <td>https://payment.labyrinthe-rdc.com/ </td>
         <td>YES</td>
       </tr>
     </tbody>
@@ -184,7 +184,7 @@ Here is a code snippet showing how to fill its parameters :
       "token" => "$2y$12$ngaXsXGwkrxpTAA.ubLXietv/Pdadfbx3OziwIH88inGU4sGi6ivm",
       "reference" => "First_TX",
       "phone" => "0896699032",
-      "gateway" => "[0896699032](https://payment.labyrinthe-rdc.com/)",
+      "gateway" => "https://payment.labyrinthe-rdc.com/",
     ];
     
 After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
