@@ -109,7 +109,7 @@ The default response format is JSON. Why is this? Because it's easy to access. T
 
     $flexpay->success
     // we can print it
-    echo $flexpay->success;
+    echo $mobile_payment->success;
 
 Some people are more comfortable with arrays than JSON in PHP, so they'll pass an array <code>$options</code> as a parameter to render the results as an array.
 
@@ -128,6 +128,117 @@ Labyrinthe-API is a service like many others covered by Labyrinthe-RDC (a digita
 
 The APIs collection offered by Labyrinthe is scalable and comprehensive. It supports a wide range of payment methods available only from us.
 From mobile payment methods to banking and soon cryptocurrencies, integrate payment solutions with ease.
+
+### Labyrinthe mobile service
+
+In the mobile section, we'll be looking at all the services related to mobile payment. In other words, making a payment and checking the results of different payments. 
+
+#### Labyrinthe mobile payment
+
+As mentioned in the introduction, this section deals with transactions. Perhaps the most difficult part of this section will be understanding the various parameters to be passed in the method (function). But relax, it's all explained in this section, and we'll start with.
+
+<table>
+    <thead>
+      <tr>
+        <th colspan="4">mobile</th>
+      </tr>
+    </thead>
+    <tbody>   
+      <tr>
+        <th width="20%">Params</th>
+        <th width="40%">Descritption</th>
+        <th width="20%">Example</th>
+        <th width="20%">Required</th>
+      </tr>
+      <tr>
+        <td>authorization</td>
+        <td>This is the Bearer token sent by Flexpay</td>
+        <td>Bearer xxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>merchant</td>
+        <td>The merchant code is the one provided by flexpay</td>
+        <td>"Orange"</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
+        <td>1</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
+        <td>1</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>reference</td>
+        <td>This is the transaction reference. In other words, the data that will enable the transaction to be traced on your side. </td>
+        <td>xxxxxxxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>phone</td>
+        <td>The telephone number involved in the transaction</td>
+        <td>243896699032</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>amount</td>
+        <td>The amount of the transaction </td>
+        <td>100</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>currency</td>
+        <td>This is the currency to be used in the transaction</td>
+        <td>USD</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>callbackUrl</td>
+        <td>This is the route by which the response (the final information about the transaction) will be returned.</td>
+        <td>abcdef.com</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>gateway</td>
+        <td>This is the URL that flexpay gave you to carry out these mobile transactions</td>
+        <td>flexpay.cd</td>
+        <td>YES</td>
+      </tr>
+    </tbody>
+</table>
+
+Here is a code snippet showing how to fill its parameters :
+
+    $array = [
+      "authorization" => "Orange",
+      "merchant" => "orange",
+      "type" => 1,
+      // Continue with other params...
+    ];
+    
+After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
+
+    $flexpay = FlexpayServiceProvider::mobile($array);
+
+Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
+
+#### Labyrinthe check mobile results
+
+In each transaction, you've sent a callbackUrl, which is the url to which the result of the transaction will be sent by the aggregator. 
+But this sending of data needs to be checked to ensure that the right information is being processed (stored in the database, for example). 
+
+In your action whose endpoint is your callbackUrl, you will call this static function :
+
+    $flexpay = FlexpayServiceProvider::phoneResults($array);
+
+This function will automatically check the result and return the transaction code status. If all is well, it will return <code>true</code> to the <code>success</code> variable and <code>false</code> otherwise.
+The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
 
 ## Flexpay
 
