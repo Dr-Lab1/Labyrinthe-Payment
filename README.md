@@ -108,7 +108,7 @@ Responses from package methods and classes all have the same format. In other wo
 
 The default response format is JSON. Why is this? Because it's easy to access. To access the JSON key 'success', for example, all you need to do is :
 
-    $flexpay->success
+    $mobile_payment->success
     // we can print it
     echo $mobile_payment->success;
 
