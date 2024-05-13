@@ -124,6 +124,11 @@ Now you can pass your parameters to the desired method to retrieve your data in 
 
 ## Labyrinthe API
 
+Labyrinthe-API is a service like many others covered by Labyrinthe-RDC (a digital-based company).
+
+The APIs collection offered by Labyrinthe is scalable and comprehensive. It supports a wide range of payment methods available only from us.
+From mobile payment methods to banking and soon cryptocurrencies, integrate payment solutions with ease.
+
 ## Flexpay
 
 FlexPaie is the electronic payments application that supports all electronic payment methods, with all operators and bank cards. It's the ideal solution for all merchants and customers. You no longer need to have an electronic account for each network - a single application operational with : Visa, Mastercard, Afrimoney, Orange Money, Airtel Money, M-Pesa etc.
