@@ -190,7 +190,7 @@ After filling in the table with the correct information provided by Flexpay, ple
 
     $labyrinthe = LabyrintheServiceProvider::betaMobile($array);
 
-Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
+Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$labyrinthe</code>.
 
 ## Flexpay
 
