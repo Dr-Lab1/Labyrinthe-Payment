@@ -166,7 +166,7 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
       <tr>
         <td>phone</td>
         <td>The telephone number involved in the transaction</td>
-        <td>243896699032</td>
+        <td>0896699032</td>
         <td>YES</td>
       </tr>
       <tr>
