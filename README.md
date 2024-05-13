@@ -135,7 +135,7 @@ In the mobile section, we'll be looking at all the services related to mobile pa
 
 #### Labyrinthe mobile payment
 
-As mentioned in the introduction, this section deals with transactions. Perhaps the most difficult part of this section will be understanding the various parameters to be passed in the method (function). But relax, it's all explained in this section, and we'll start with.
+As mentioned in the introduction, this section deals with transactions. Perhaps the most difficult part of this section will be understanding the various parameters to be passed in the method (function). But relax, it's all explained in this section, and we'll start with. We also offer a sandbox for different payment tests before going premium. Easy to integrate.
 
 <table>
     <thead>
