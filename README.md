@@ -192,6 +192,63 @@ After filling in the table with the correct information provided by Flexpay, ple
 
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$labyrinthe</code>.
 
+
+### Labyrinthe check transaction
+
+Transaction verification is an action aimed at checking the status of a transaction and/or extracting certain details from it. This exercise concerns both mobile and credit card transactions in the system.
+
+There are a few parameters to enter:
+
+<table>
+    <thead>
+      <tr>
+        <th colspan="4">mobile & card</th>
+      </tr>
+    </thead>
+    <tbody>   
+      <tr>
+        <th width="20%">Params</th>
+        <th width="40%">Descritption</th>
+        <th width="20%">Example</th>
+        <th width="20%">Required</th>
+      </tr>
+      <tr>
+        <td>authorization</td>
+        <td>This is the Bearer token sent by Flexpay</td>
+        <td>Bearer xxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>orderNumber</td>
+        <td>This is the transaction orderNumber In other words, the data that will enable the transaction to be traced on your side. </td>
+        <td>xxxxxxxxxx</td>
+        <td>YES</td>
+      </tr>
+      <tr>
+        <td>gateway</td>
+        <td>This is the URL that flexpay gave you to carry out these transactions</td>
+        <td>https://xyz.com</td>
+        <td>YES</td>
+      </tr>
+    </tbody>
+</table>
+
+
+Here is a code snippet showing how to fill its parameters :
+
+    $array = [
+      "token" => "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "gateway" => "https://xyz.cd/check/",
+      "orderNumber" => "azertyytreza",
+    ];
+    
+After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
+
+    $labyrinthe = LabyrintheServiceProvider::checkTransaction($array);
+
+Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$labyrinthe</code>.
+
+
 ## Flexpay
 
 FlexPaie is the electronic payments application that supports all electronic payment methods, with all operators and bank cards. It's the ideal solution for all merchants and customers. You no longer need to have an electronic account for each network - a single application operational with : Visa, Mastercard, Afrimoney, Orange Money, Airtel Money, M-Pesa etc.
@@ -332,7 +389,7 @@ There are a few parameters to enter:
 <table>
     <thead>
       <tr>
-        <th colspan="4">mobile</th>
+        <th colspan="4">mobile & card</th>
       </tr>
     </thead>
     <tbody>   
