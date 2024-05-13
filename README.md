@@ -214,9 +214,9 @@ There are a few parameters to enter:
         <th width="20%">Required</th>
       </tr>
       <tr>
-        <td>authorization</td>
-        <td>This is the Bearer token sent by Flexpay</td>
-        <td>Bearer xxxxx</td>
+        <td>token</td>
+        <td>This is the token given by Labyrinthe</td>
+        <td>xxxxxxxxxxxxxx</td>
         <td>YES</td>
       </tr>
       <tr>
