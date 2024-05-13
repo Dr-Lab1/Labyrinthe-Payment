@@ -189,21 +189,9 @@ Here is a code snippet showing how to fill its parameters :
     
 After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
 
-    $flexpay = FlexpayServiceProvider::mobile($array);
+    $labyrinthe = LabyrintheServiceProvider::betaMobile($array);
 
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$flexpay</code>.
-
-#### Labyrinthe check mobile results
-
-In each transaction, you've sent a callbackUrl, which is the url to which the result of the transaction will be sent by the aggregator. 
-But this sending of data needs to be checked to ensure that the right information is being processed (stored in the database, for example). 
-
-In your action whose endpoint is your callbackUrl, you will call this static function :
-
-    $flexpay = FlexpayServiceProvider::phoneResults($array);
-
-This function will automatically check the result and return the transaction code status. If all is well, it will return <code>true</code> to the <code>success</code> variable and <code>false</code> otherwise.
-The processing of information coming from the aggregator will depend on the result of the function. You can either save to the database, or perform calculations,...
 
 ## Flexpay
 
