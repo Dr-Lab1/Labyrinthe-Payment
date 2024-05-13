@@ -132,16 +132,16 @@ From mobile payment methods to banking and soon cryptocurrencies, integrate paym
 
 ### Labyrinthe mobile service
 
-In the mobile section, we'll be looking at all the services related to mobile payment. In other words, making a payment and checking the results of different payments. 
+In the mobile section, we'll be looking at all the services related to mobile payment. In other words, making a payment and checking the results of different payments. We also offer a sandbox for different payment tests before going premium. Easy to integrate.
 
-#### Labyrinthe mobile payment
+#### Labyrinthe mobile payment sandbox
 
-As mentioned in the introduction, this section deals with transactions. Perhaps the most difficult part of this section will be understanding the various parameters to be passed in the method (function). But relax, it's all explained in this section, and we'll start with. We also offer a sandbox for different payment tests before going premium. Easy to integrate.
+As mentioned in the introduction, this section deals with transactions. Perhaps the most difficult part of this section will be understanding the various parameters to be passed in the method (function). But relax, it's all explained in this section, and we'll start with. 
 
 <table>
     <thead>
       <tr>
-        <th colspan="4">mobile</th>
+        <th colspan="4">Beta Mobile</th>
       </tr>
     </thead>
     <tbody>   
@@ -152,27 +152,9 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
         <th width="20%">Required</th>
       </tr>
       <tr>
-        <td>authorization</td>
-        <td>This is the Bearer token sent by Flexpay</td>
-        <td>Bearer xxxxx</td>
-        <td>YES</td>
-      </tr>
-      <tr>
-        <td>merchant</td>
-        <td>The merchant code is the one provided by flexpay</td>
-        <td>"Orange"</td>
-        <td>YES</td>
-      </tr>
-      <tr>
-        <td>type</td>
-        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
-        <td>1</td>
-        <td>YES</td>
-      </tr>
-      <tr>
-        <td>type</td>
-        <td>This is the type of transaction you want to carry out. In our case it's mobile. So the type will be "1".</td>
-        <td>1</td>
+        <td>token</td>
+        <td>This is the token given by Labyrinthe</td>
+        <td>xxxx xxxxx</td>
         <td>YES</td>
       </tr>
       <tr>
@@ -188,27 +170,9 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
         <td>YES</td>
       </tr>
       <tr>
-        <td>amount</td>
-        <td>The amount of the transaction </td>
-        <td>100</td>
-        <td>YES</td>
-      </tr>
-      <tr>
-        <td>currency</td>
-        <td>This is the currency to be used in the transaction</td>
-        <td>USD</td>
-        <td>YES</td>
-      </tr>
-      <tr>
-        <td>callbackUrl</td>
-        <td>This is the route by which the response (the final information about the transaction) will be returned.</td>
-        <td>abcdef.com</td>
-        <td>YES</td>
-      </tr>
-      <tr>
         <td>gateway</td>
-        <td>This is the URL that flexpay gave you to carry out these mobile transactions</td>
-        <td>flexpay.cd</td>
+        <td>This is the URL that labyrinthe gave you to carry out these mobile transactions</td>
+        <td>For example : https://payment.labyrinthe-rdc.com/ </td>
         <td>YES</td>
       </tr>
     </tbody>
@@ -217,10 +181,10 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
 Here is a code snippet showing how to fill its parameters :
 
     $array = [
-      "authorization" => "Orange",
-      "merchant" => "orange",
-      "type" => 1,
-      // Continue with other params...
+      "token" => "$2y$12$ngaXsXGwkrxpTAA.ubLXietv/Pdadfbx3OziwIH88inGU4sGi6ivm",
+      "reference" => "First_TX",
+      "phone" => "0896699032",
+      "gateway" => "[0896699032](https://payment.labyrinthe-rdc.com/)",
     ];
     
 After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
