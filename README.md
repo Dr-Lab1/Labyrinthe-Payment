@@ -39,7 +39,7 @@ If you haven't composed yet, it's time to install it. After all, it's the main i
 
 After installation, go to the root of your project and issue this command :
 
-    composer install labyrinthe/payment
+    composer require labyrinthe/payment
 
 ## Using GitHub
 
