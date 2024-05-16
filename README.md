@@ -1,5 +1,5 @@
 # Labyrinthe - Payment : Documentation
- 
+  
 ## Plan
 - <a href="#package-description" > Package description <a/>
 - <a href="#install-the-labyrinthepayment-package" > Install the Labyrinthe/Payment package <a/>
@@ -26,7 +26,7 @@
 
 In programming, a package (or module, depending on the language) is a collection of various code elements, such as classes, functions, variables and constants. It's a crucial organizational tool that enables code to be structured in a modular and coherent way, making it easier to read, maintain and reuse.
 
-The main aim of our package is to make available classes and functions that facilitate the integration of various payment aggregators such as Flexpay, Stripe,... Instead of coding the logic from scratch, you'll save time by using this package. In some cases, a single line of code will suffice to execute complex functions.
+The main aim of our package is to make available classes and functions that facilitate the integration of various payment aggregators such as Labyrinthe, Flexpay, Stripe,... Instead of coding the logic from scratch, you'll save time by using this package. In some cases, a single line of code will suffice to execute complex functions.
 
 # Install the Labyrinthe/Payment package
 
@@ -39,7 +39,7 @@ If you haven't composed yet, it's time to install it. After all, it's the main i
 
 After installation, go to the root of your project and issue this command :
 
-    composer install labyrinthe-payment
+    composer require labyrinthe/payment
 
 ## Using GitHub
 
@@ -166,7 +166,7 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
       <tr>
         <td>phone</td>
         <td>The telephone number involved in the transaction</td>
-        <td>243896699032</td>
+        <td>0896699032</td>
         <td>YES</td>
       </tr>
       <tr>
@@ -177,7 +177,7 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
       </tr>
     </tbody>
 </table>
-
+ 
 Here is a code snippet showing how to fill its parameters :
 
     $array = [
