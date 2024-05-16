@@ -25,7 +25,7 @@ class LabyrintheServiceProvider
     }
     
     /**
-     * The 'checkTransaction' method is the one that facilitates rapid 
+     * The 'getTransaction' method is the one that facilitates rapid 
      * checking of the payment state
      * 
      * It receives an array as a parameter with data such as: 
@@ -42,11 +42,11 @@ class LabyrintheServiceProvider
     }
 
     /**
-     * The 'checkTransaction' method is the one that facilitates rapid 
+     * The 'getTransactions' method is the one that facilitates rapid 
      * checking of the payment state
      * 
      * It receives an array as a parameter with data such as: 
-     * orderNumber, token, gateway
+     * token, gateway
      * 
      * @param array $array
      * 

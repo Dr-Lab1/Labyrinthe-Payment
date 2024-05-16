@@ -65,7 +65,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
             curl_close($ch);
             $jsonRes = json_decode($response);
 
-            if (! $jsonRes->success) {
+            if (!$jsonRes->success) {
                 $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes, $jsonRes->errors);
             } else {
                 $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
@@ -96,71 +96,71 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
      * @return mixed
      */
 
-     public function mobile(array $request, array $options = []): mixed
-     {
- 
-         $validator = Validator::make(
-             $request,
-             [
-                 "merchant" => ['required'],
-                 "type" => ["required", "number"],
-                 "reference" => ['required'],
-                 "amount" => ['required', "number"],
-                 "currency" => ["required"],
-                 "callbackUrl" => ["required"],
-                 "phone" => ["required"],
-                 "token" => ["required"],
-                 "gateway" => ["required"]
-             ]
-         );
- 
-         $json = isset($options['JSON']) ? $options['JSON'] : true;
- 
-         if ($validator) {
-             $this->result["errors"] = $validator;
- 
-             if ($json)
-                 return $this->parseToJSON($this->result);
- 
-             return $this->result;
-         }
- 
-         $this->setParams($request);
- 
- 
-         $ch = curl_init();
- 
-         $this->setOptions("POST");
- 
-         curl_setopt_array($ch, $this->options);
- 
-         $response = curl_exec($ch);
- 
-         if (curl_errno($ch)) {
-             $this->setResult(false, 'Une erreur lors du traitement de votre requête  ou vérifier votre connexion', $json, [], curl_error($ch));
-         } else {
-             curl_close($ch);
-             $jsonRes = json_decode($response);
- 
-             if (! $jsonRes->success) {
-                 $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes);
-             } else {
-                 $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
-             }
-         }
- 
-         $this->history(
-             [
-                 "provider" => "labyrinthe",
-                 "method" => "mobile-payment",
-                 "amount" => $this->amount,
-                 "currency" => $this->currency
-             ]
-         );
- 
-         # Final return
-         return $this->result;
-     }
+    public function mobile(array $request, array $options = []): mixed
+    {
+
+        $validator = Validator::make(
+            $request,
+            [
+                "merchant" => ['required'],
+                "type" => ["required", "number"],
+                "reference" => ['required'],
+                "amount" => ['required', "number"],
+                "currency" => ["required"],
+                "callbackUrl" => ["required"],
+                "phone" => ["required"],
+                "token" => ["required"],
+                "gateway" => ["required"]
+            ]
+        );
+
+        $json = isset($options['JSON']) ? $options['JSON'] : true;
+
+        if ($validator) {
+            $this->result["errors"] = $validator;
+
+            if ($json)
+                return $this->parseToJSON($this->result);
+
+            return $this->result;
+        }
+
+        $this->setParams($request);
+
+
+        $ch = curl_init();
+
+        $this->setOptions("POST");
+
+        curl_setopt_array($ch, $this->options);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête  ou vérifier votre connexion', $json, [], curl_error($ch));
+        } else {
+            curl_close($ch);
+            $jsonRes = json_decode($response);
+
+            if (!$jsonRes->success) {
+                $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes);
+            } else {
+                $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
+            }
+        }
+
+        $this->history(
+            [
+                "provider" => "labyrinthe",
+                "method" => "mobile-payment",
+                "amount" => $this->amount,
+                "currency" => $this->currency
+            ]
+        );
+
+        # Final return
+        return $this->result;
+    }
 
     /**
      * The 'phoneResults' method is the one that facilitates rapid 
@@ -278,7 +278,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
     }
 
     /**
-     * The 'checkTransaction' method is the one that facilitates rapid 
+     * The 'getTransaction' method is the one that facilitates rapid 
      * checking of the payment state
      * 
      * It receives an array as a parameter with data such as: 
@@ -325,14 +325,11 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
-
-            switch (! $jsonRes->success) {
-                case '0':
-                    $this->setResult(true, "Une erreur s'est produite.", $json, $jsonRes);
-                    break;
-                case '1':
-                    $this->setResult(false, "La transaction demandée.", $json, $jsonRes);
-                    break;
+            
+            if ($jsonRes->success) {
+                $this->setResult(true, "La transaction demandée.", $json, $jsonRes);
+            } else {
+                $this->setResult(false, "Une erreur s'est produite.", $json, $jsonRes);
             }
         }
 
@@ -348,11 +345,11 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
     }
 
     /**
-     * The 'checkTransaction' method is the one that facilitates rapid 
+     * The 'getTransactions' method is the one that facilitates rapid 
      * checking of the payment state
      * 
      * It receives an array as a parameter with data such as: 
-     * orderNumber, token, gateway
+     * token, gateway
      * 
      * @param array $array
      * 
@@ -395,13 +392,10 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
             curl_close($ch);
             $jsonRes = json_decode($response);
 
-            switch (! $jsonRes->success) {
-                case '0':
-                    $this->setResult(true, "Une erreur s'est produite.", $json, $jsonRes);
-                    break;
-                case '1':
-                    $this->setResult(false, "La liste de vos transactions.", $json, $jsonRes);
-                    break;
+            if ($jsonRes->success) {
+                $this->setResult(true, "La liste de vos transactions.", $json, $jsonRes);
+            } else {
+                $this->setResult(false, "Une erreur s'est produite.", $json, $jsonRes);
             }
         }
 
