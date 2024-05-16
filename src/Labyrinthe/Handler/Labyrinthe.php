@@ -326,7 +326,6 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
         } else {
             curl_close($ch);
             $jsonRes = json_decode($response);
-            $code = $jsonRes->code;
 
             switch (! $jsonRes->success) {
                 case '0':
