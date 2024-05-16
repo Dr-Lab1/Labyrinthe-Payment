@@ -177,7 +177,7 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
       </tr>
     </tbody>
 </table>
-
+ 
 Here is a code snippet showing how to fill its parameters :
 
     $array = [
