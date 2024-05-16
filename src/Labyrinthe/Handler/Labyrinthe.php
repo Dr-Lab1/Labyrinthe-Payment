@@ -141,9 +141,8 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
          } else {
              curl_close($ch);
              $jsonRes = json_decode($response);
-             $code = $jsonRes->code;
  
-             if ($code != "0") {
+             if (! $jsonRes->success) {
                  $this->setResult(false, 'Impossible de traiter la demande, veuillez réessayer', $json, $jsonRes);
              } else {
                  $this->setResult(true, "Transaction envoyée avec succès. Veuillez valider le push message", $json, $jsonRes);
@@ -329,10 +328,10 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
 
             switch (! $jsonRes->success) {
                 case '0':
-                    $this->setResult(true, $jsonRes->message, $json, $jsonRes);
+                    $this->setResult(true, "Une erreur s'est produite.", $json, $jsonRes);
                     break;
                 case '1':
-                    $this->setResult(false, $jsonRes->message, $json, $jsonRes);
+                    $this->setResult(false, "La transaction demandée.", $json, $jsonRes);
                     break;
             }
         }
@@ -399,10 +398,10 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
 
             switch (! $jsonRes->success) {
                 case '0':
-                    $this->setResult(true, $jsonRes->message, $json, $jsonRes);
+                    $this->setResult(true, "Une erreur s'est produite.", $json, $jsonRes);
                     break;
                 case '1':
-                    $this->setResult(false, $jsonRes->message, $json, $jsonRes);
+                    $this->setResult(false, "La liste de vos transactions.", $json, $jsonRes);
                     break;
             }
         }
