@@ -13,7 +13,9 @@ interface LabyrintheInterface
 
     public function cardResults(array $array, array $options = []): mixed;
 
-    public function checkTransaction(array $array, array $options = []): mixed;
+    public function getTransaction(array $array, array $options = []): mixed;
+
+    public function getTransactions(array $array, array $options = []): mixed;
 
     public function merchantPayOutService(array $array, array $options = []): mixed;
     

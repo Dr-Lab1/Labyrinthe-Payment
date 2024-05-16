@@ -289,7 +289,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
      * 
      * @return mixed
      */
-    public function checkTransaction(array $request, array $options = []): mixed
+    public function getTransaction(array $request, array $options = []): mixed
     {
         $validator = Validator::make(
             $request,
@@ -315,7 +315,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
 
         $ch = curl_init();
 
-        $this->setOptions("GET");
+        $this->setOptions("POST");
 
         curl_setopt_array($ch, $this->options);
 
@@ -328,7 +328,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
             $jsonRes = json_decode($response);
             $code = $jsonRes->code;
 
-            switch ($code) {
+            switch (! $jsonRes->success) {
                 case '0':
                     $this->setResult(true, $jsonRes->message, $json, $jsonRes);
                     break;
@@ -342,6 +342,76 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
             [
                 "provider" => "labyrinthe",
                 "method" => "check-transaction",
+            ]
+        );
+
+        # Final return
+        return $this->result;
+    }
+
+    /**
+     * The 'checkTransaction' method is the one that facilitates rapid 
+     * checking of the payment state
+     * 
+     * It receives an array as a parameter with data such as: 
+     * orderNumber, token, gateway
+     * 
+     * @param array $array
+     * 
+     * @return mixed
+     */
+    public function getTransactions(array $request, array $options = []): mixed
+    {
+        $validator = Validator::make(
+            $request,
+            [
+                "token" => ["required"],
+                "gateway" => ["required"],
+                "orderNumber" => ["required"],
+            ]
+        );
+
+        $json = isset($options['JSON']) ? $options['JSON'] : true;
+
+        if ($validator) {
+            $this->result["errors"] = $validator;
+
+            if ($json)
+                return $this->parseToJSON($this->result);
+
+            return $this->result;
+        }
+
+        $this->setParams($request);
+
+        $ch = curl_init();
+
+        $this->setOptions("POST");
+
+        curl_setopt_array($ch, $this->options);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $this->setResult(false, 'Une erreur lors du traitement de votre requête', $json, [], curl_error($ch));
+        } else {
+            curl_close($ch);
+            $jsonRes = json_decode($response);
+
+            switch (! $jsonRes->success) {
+                case '0':
+                    $this->setResult(true, $jsonRes->message, $json, $jsonRes);
+                    break;
+                case '1':
+                    $this->setResult(false, $jsonRes->message, $json, $jsonRes);
+                    break;
+            }
+        }
+
+        $this->history(
+            [
+                "provider" => "labyrinthe",
+                "method" => "get-transactions",
             ]
         );
 
