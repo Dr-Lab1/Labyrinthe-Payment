@@ -365,7 +365,6 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
             [
                 "token" => ["required"],
                 "gateway" => ["required"],
-                "orderNumber" => ["required"],
             ]
         );
 
