@@ -141,7 +141,7 @@ As mentioned in the introduction, this section deals with transactions. Perhaps 
 <table>
     <thead>
       <tr>
-        <th colspan="4">Beta Mobile</th>
+        <th colspan="4">SandBox</th>
       </tr>
     </thead>
     <tbody>   
