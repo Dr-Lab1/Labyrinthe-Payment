@@ -5,7 +5,7 @@ namespace Labyrinthe\Payment\Labyrinthe\Handler;
 interface LabyrintheInterface
 {
 
-    public function betaMobile(array $array, array $options = []): mixed;
+    public function sandbox(array $array, array $options = []): mixed;
 
     public function mobile(array $array, array $options = []): mixed;
 

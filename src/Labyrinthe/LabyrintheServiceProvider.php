@@ -8,7 +8,7 @@ class LabyrintheServiceProvider
 {
 
     /**
-     * The static 'betaMobile' method is the one that facilitates rapid 
+     * The static 'sandbox' method is the one that facilitates rapid 
      * integration of the payment module into your application.
      * 
      * It receives an array as a parameter with data such as: 
@@ -18,10 +18,10 @@ class LabyrintheServiceProvider
      * 
      * @return mixed
      */
-    public static function betaMobile(array $array, array $options = [])
+    public static function sandbox(array $array, array $options = [])
     {
         $labyrinthe = new Labyrinthe();
-        return $labyrinthe->betaMobile($array, $options);
+        return $labyrinthe->sandbox($array, $options);
     }
     
     /**

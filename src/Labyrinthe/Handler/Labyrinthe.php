@@ -12,7 +12,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
     use LabyrintheTrait;
 
     /**
-     * The 'betaMobile' method is the one that facilitates rapid 
+     * The 'sandbox' method is the one that facilitates rapid 
      * integration of the payment module into your application.
      * It receives an array as a parameter with data such as: 
      * merchant, type, reference, amount, currency, callbackUrl, phone, token, gateway, etc. 
@@ -22,7 +22,7 @@ class Labyrinthe extends paymentServiceProvider implements LabyrintheInterface
      * @return mixed
      */
 
-    public function betaMobile(array $request, array $options = []): mixed
+    public function sandbox(array $request, array $options = []): mixed
     {
 
         $validator = Validator::make(
