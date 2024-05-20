@@ -134,7 +134,7 @@ From mobile payment methods to banking and soon cryptocurrencies, integrate paym
 
 In the mobile section, we'll be looking at all the services related to mobile payment. In other words, making a payment and checking the results of different payments. We also offer a sandbox for different payment tests before going premium. Easy to integrate.
 
-#### Labyrinthe mobile payment sandbox
+#### Labyrinthe sandbox
 
 As mentioned in the introduction, this section deals with transactions. Perhaps the most difficult part of this section will be understanding the various parameters to be passed in the method (function). But relax, it's all explained in this section, and we'll start with. 
 
