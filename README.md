@@ -189,7 +189,7 @@ Here is a code snippet showing how to fill its parameters :
     
 After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
 
-    $labyrinthe = LabyrintheServiceProvider::betaMobile($array);
+    $labyrinthe = LabyrintheServiceProvider::sandbox($array);
 
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$labyrinthe</code>.
 
