@@ -10,7 +10,7 @@
   - <a href="#global" > Global <a/>
   - <a href="#labyrinthe-api" > Labyrinthe API <a/>
     - <a href="#labyrinthe-mobile-service" > Labyrinthe mobile service <a/>
-      - <a href="#labyrinthe-mobile-payment-sandbox" > Labyrinthe mobile payment sandbox <a/>
+      - <a href="#labyrinthe-sandbox" > Labyrinthe sandbox <a/>
     - <a href="#labyrinthe-check-transaction" > Labyrinthe check transaction <a/>
   - <a href="#flexpay" > Flexpay <a/>
     - <a href="#flexpay-mobile-service" > Flexpay mobile service <a/>
@@ -134,14 +134,14 @@ From mobile payment methods to banking and soon cryptocurrencies, integrate paym
 
 In the mobile section, we'll be looking at all the services related to mobile payment. In other words, making a payment and checking the results of different payments. We also offer a sandbox for different payment tests before going premium. Easy to integrate.
 
-#### Labyrinthe mobile payment sandbox
+#### Labyrinthe sandbox
 
 As mentioned in the introduction, this section deals with transactions. Perhaps the most difficult part of this section will be understanding the various parameters to be passed in the method (function). But relax, it's all explained in this section, and we'll start with. 
 
 <table>
     <thead>
       <tr>
-        <th colspan="4">Beta Mobile</th>
+        <th colspan="4">SandBox</th>
       </tr>
     </thead>
     <tbody>   
@@ -189,7 +189,7 @@ Here is a code snippet showing how to fill its parameters :
     
 After filling in the table with the correct information provided by Flexpay, please copy the following code portion: 
 
-    $labyrinthe = LabyrintheServiceProvider::betaMobile($array);
+    $labyrinthe = LabyrintheServiceProvider::sandbox($array);
 
 Now run your code from your controller and process the information as required. All the information is returned in the variable <code>$labyrinthe</code>.
 
