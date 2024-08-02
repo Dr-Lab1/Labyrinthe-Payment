@@ -3,7 +3,6 @@
     "description": "A package facilitating the integration of payment modules from several payment aggregators",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
     "homepage": "https://github.com/Dr-Lab1/Labyrinthe-Payment",
     "keywords": [
         "labyrinthe",
