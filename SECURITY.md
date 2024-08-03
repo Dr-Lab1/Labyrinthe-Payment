@@ -8,3 +8,4 @@ Les versions avec leurs niveaux de sécurité !
 | ------- | ------------------ |
 | 1.0.x   | :white_check_mark: |
 
+ 
